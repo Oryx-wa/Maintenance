@@ -1,0 +1,2 @@
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at OWA.SBO.OryxPayrWinx30.SBOScaleHistory_b1f.getIncome(String strHistCode) in C:\Oryx\OryxPayr30\OryxPayrWinx30\AddOnForms\SBOScaleHistory.b1f.vb:line 151,,,,,,,,,,,,,,

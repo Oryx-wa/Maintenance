@@ -1,0 +1,77 @@
+﻿DECLARE @Loantype char(8), @type int , @tcFilter char(20) , @tcFilterVal varchar(100) 
+
+select @LoanType = 'OWAPARAM1',
+	@type=OWAPARAM2,
+	@tcFilter='OWAPARAM3',
+	@tcFilterVal='OWAPARAM4'
+	
+BEGIN
+	DECLARE @pruncd char(8)
+	
+	SELECT @pruncd = U_pruncode FROM [@OWA_LOANTYPES] WHERE code = @LoanType
+END
+
+BEGIN
+	DECLARE @EmpRun Table (empid int, LastName varchar(20), FirstName varchar(20), U_coscen char(10), U_xcode char(20))
+	IF @tcFilter = 'All'
+	BEGIN
+		INSERT @EmpRun (empid,LastName,FirstName,U_coscen,U_xcode)
+		SELECT empid,LastName,FirstName,U_coscen,U_xcode
+		FROM OHEM
+	END
+	IF @tcFilter = 'Cost Centre'
+	BEGIN
+		INSERT @EmpRun (empid,LastName,FirstName,U_coscen,U_xcode)
+		SELECT empid,LastName,FirstName,U_coscen,U_xcode
+		FROM OHEM 
+		WHERE U_coscen = @tcFilterVal
+	END
+	IF @tcFilter = 'Staff Category'
+	BEGIN
+		INSERT @EmpRun (empid,LastName,FirstName,U_coscen,U_xcode)
+		SELECT empid,LastName,FirstName,U_coscen,U_xcode
+		FROM OHEM
+		WHERE U_staffCat = @tcFilterVal
+	END
+	
+
+END
+	IF  @type = 0
+	BEGIN
+		SELECT b.LastName + ' '+ b.FirstName [Employee Name],empid,U_xCode [Alternate Code],U_LoanR [Loan Ref] ,U_AmtAppr [Amt Appr],
+			U_Recover [Recovery], U_startDed [Start Ded], U_DateAppr [Date Appr],
+			U_jrnlNum [Journal No], U_SchAmt [Sch Amt],Code, Name,  b.U_coscen [Cost Centre]
+		FROM [@OWA_LOANHISTORY] a JOIN 
+		(SELECT FirstName, LastName,empid,U_coscen,U_xCode
+										FROM @EmpRun ) b
+			ON a.U_empid = b.empid
+		WHERE a.U_wagecode = @LoanType
+		ORDER BY 2,1
+	END
+	
+	IF @type = 1 
+	BEGIN
+		SELECT empid [Employee Number],LastName + ' '+ FirstName [Employee Name],
+				a.U_xCode [Alternative Code]
+		FROM @EmpRun a
+		WHERE empid NOT IN (SELECT U_empid FROM [@OWA_LOANHISTORY]
+								WHERE U_wagecode = @LoanType)	
+		ORDER BY 3		
+	END
+
+	IF  @type = 2
+	BEGIN
+		SELECT b.LastName + ' '+ b.FirstName [Employee Name],empid,U_xCode [Alternate Code],U_LoanR [Loan Ref] ,U_AmtAppr [Amt Appr],
+			U_Recover [Recovery], U_startDed [Start Ded], U_DateAppr [Date Appr],
+			U_jrnlNum [Journal No], U_SchAmt [Sch Amt],Code, Name, empid, b.U_coscen [Cost Centre]
+		FROM [@OWA_LOANHISTORY] a JOIN 
+		(SELECT FirstName, LastName, empid,U_coscen,U_xCode
+										FROM @EmpRun ) b
+			ON a.U_empid = b.empid
+		WHERE U_jrnlNum = '' AND a.U_wagecode = @LoanType 
+		ORDER BY 2,1
+	END
+
+
+
+ 

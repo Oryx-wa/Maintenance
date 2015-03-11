@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{D7FC2819-6639-488B-B4EF-4EB081871B07}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>OWA.SBO.OryxMtceOrderSQL</RootNamespace>
+    <AssemblyName>OryxMtceOrderSQL</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>OryxMtceOrderSQL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>OryxMtceOrderSQL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>OryxMtceOrderSQL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\OryxPayrSQL.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>OryxMtceOrderSQL.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\OryxPayrSQL.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusObjectInfoSQL.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Query\OWA_BANKSCHEDULE.txt" />
+    <EmbeddedResource Include="Query\OWA_BANKSUMMARY.txt" />
+    <EmbeddedResource Include="Query\OWA_CASHSCHEDULE.txt" />
+    <EmbeddedResource Include="Query\OWA_CCALCNETPAY.txt" />
+    <EmbeddedResource Include="Query\OWA_CCALCNETPAY2.txt" />
+    <EmbeddedResource Include="Query\OWA_CCHECKFORMULA.txt" />
+    <EmbeddedResource Include="Query\OWA_CGETCASHPAYMENT.txt" />
+    <EmbeddedResource Include="Query\OWA_CGETPAYSLIPS.txt" />
+    <EmbeddedResource Include="Query\OWA_CHECKFORMULA.txt" />
+    <EmbeddedResource Include="Query\OWA_CHECKFORMULA_PRUN.txt" />
+    <EmbeddedResource Include="Query\OWA_CHKSALHISTORY.txt" />
+    <EmbeddedResource Include="Query\OWA_CHKSCALEHISTORY.txt" />
+    <EmbeddedResource Include="Query\OWA_CJRMCROSSTAB.txt" />
+    <EmbeddedResource Include="Query\OWA_CPAYSHEET.txt" />
+    <EmbeddedResource Include="Query\OWA_CPAYSUMM.txt" />
+    <EmbeddedResource Include="Query\OWA_CPROCESSADVANCE.txt" />
+    <EmbeddedResource Include="Query\OWA_CRUNPAYROLL.txt" />
+    <EmbeddedResource Include="Query\OWA_CVARIABLEUPD.txt" />
+    <EmbeddedResource Include="Query\OWA_CVERIFY.txt" />
+    <EmbeddedResource Include="Query\OWA_ENDPROCESSPAYROLL.txt" />
+    <EmbeddedResource Include="Query\OWA_GETEMPINRUN.txt" />
+    <EmbeddedResource Include="Query\OWA_GETEMPLOANS.txt" />
+    <EmbeddedResource Include="Query\OWA_GETEMPLOYEESINBATCH.txt" />
+    <EmbeddedResource Include="Query\OWA_GETEMPTAX.txt" />
+    <EmbeddedResource Include="Query\OWA_GETEMPWAGE.txt" />
+    <EmbeddedResource Include="Query\OWA_GETNETPAY.txt" />
+    <EmbeddedResource Include="Query\OWA_GETPAYSLIPS.txt" />
+    <EmbeddedResource Include="Query\OWA_GETSCALETOTALS.txt" />
+    <EmbeddedResource Include="Query\OWA_GETSTEPS.txt" />
+    <EmbeddedResource Include="Query\OWA_GETSTEPWAGE.txt" />
+    <EmbeddedResource Include="Query\OWA_GETTAXRETURN.txt" />
+    <EmbeddedResource Include="Query\OWA_GETVARIABLEITEMS.txt" />
+    <EmbeddedResource Include="Query\OWA_GETWAGEAMOUNTS.txt" />
+    <EmbeddedResource Include="Query\OWA_INITPROCESSPAYROLL.txt" />
+    <EmbeddedResource Include="Query\OWA_PAYROLLCONTROL.txt" />
+    <EmbeddedResource Include="Query\OWA_PAYROLLSUMMARY.txt" />
+    <EmbeddedResource Include="Query\OWA_PAYROLLSUMMARYBYDEPT.txt" />
+    <EmbeddedResource Include="Query\OWA_PAYSHEET.txt" />
+    <EmbeddedResource Include="Query\OWA_PROCESSADVANCE.txt" />
+    <EmbeddedResource Include="Query\OWA_PROCESSLOANS.txt" />
+    <EmbeddedResource Include="Query\OWA_PROCESSTAX.txt" />
+    <EmbeddedResource Include="Query\OWA_PROCESSWAGEITEMS.txt" />
+    <EmbeddedResource Include="Query\OWA_REP_EMP_ON_PAYROLL.txt" />
+    <EmbeddedResource Include="Query\OWA_REP_LOANS.txt" />
+    <EmbeddedResource Include="Query\OWA_REP_PAYDED.txt" />
+    <EmbeddedResource Include="Query\OWA_REP_PAYROLLCONTROL.txt" />
+    <EmbeddedResource Include="Query\OWA_REP_PAYSHEET.txt" />
+    <EmbeddedResource Include="Query\OWA_UPDATELOANHISTORY.txt" />
+    <EmbeddedResource Include="Query\OWA_VALIDATEWAGEFORMULA.txt" />
+    <EmbeddedResource Include="Query\OWA_VALIDATEWAGESCALEFORMULA.txt" />
+    <EmbeddedResource Include="Query\OWA_VERIFY.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SAPbobsCOM">
+      <Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30090}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Query\OWA_CHECKTAXRELIEF.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SBOAddonBaseNew\SboAddOnBaseNew.vbproj">
+      <Project>{A168FDF6-A804-42B9-97B6-64F127AEFB2D}</Project>
+      <Name>SboAddOnBaseNew</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

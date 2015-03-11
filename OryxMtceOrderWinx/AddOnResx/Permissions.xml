@@ -1,0 +1,22 @@
+<Permissions>
+  <Perm>
+    <PermissionID>OWA_MOR</PermissionID>
+    <PermName>Plant Maintenance</PermName>
+    <PermType>1</PermType>
+    <PermLevel>1</PermLevel>
+    <FatherID></FatherID>
+    <IsItem>N</IsItem>
+    <Created>N</Created>
+  </Perm>
+  <Perm>
+    <PermissionID>OWA_MOREXEC</PermissionID>
+    <PermName>Execute</PermName>
+    <PermType>0</PermType>
+    <PermLevel>2</PermLevel>
+    <FatherID>OWA_MOR</FatherID>
+    <IsItem>N</IsItem>
+    <Created>N</Created>
+  </Perm>
+  
+ 
+</Permissions>

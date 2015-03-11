@@ -1,0 +1,13 @@
+C:\Oryx\OryxPayr30\OryxPayrLib30\bin\Debug\OryxPayrLib30.dll
+C:\Oryx\OryxPayr30\OryxPayrLib30\bin\Debug\OryxPayrLib30.pdb
+C:\Oryx\OryxPayr30\OryxPayrLib30\bin\Debug\OryxPayrLib30.xml
+C:\Oryx\OryxPayr30\OryxPayrLib30\bin\Debug\SAPbouiCOM.dll
+C:\Oryx\OryxPayr30\OryxPayrLib30\bin\Debug\SboAddOnBase.dll
+C:\Oryx\OryxPayr30\OryxPayrLib30\bin\Debug\SboAddOnBase.pdb
+C:\Oryx\OryxPayr30\OryxPayrLib30\bin\Debug\SboAddOnBase.xml
+C:\Oryx\OryxPayr30\OryxPayrLib30\obj\Debug\OryxPayrLib30.vbprojResolveAssemblyReference.cache
+C:\Oryx\OryxPayr30\OryxPayrLib30\obj\Debug\OryxPayrLib30.Resources.resources
+C:\Oryx\OryxPayr30\OryxPayrLib30\obj\Debug\OryxPayrLib30.vbproj.GenerateResource.Cache
+C:\Oryx\OryxPayr30\OryxPayrLib30\obj\Debug\OryxPayrLib30.dll
+C:\Oryx\OryxPayr30\OryxPayrLib30\obj\Debug\OryxPayrLib30.xml
+C:\Oryx\OryxPayr30\OryxPayrLib30\obj\Debug\OryxPayrLib30.pdb

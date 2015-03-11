@@ -1,0 +1,17 @@
+C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderSQL\bin\x86\Debug\OryxMtceOrderSQL.dll
+C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderSQL\bin\x86\Debug\OryxMtceOrderSQL.pdb
+C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderSQL\bin\x86\Debug\OryxMtceOrderSQL.xml
+C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderSQL\bin\x86\Debug\SboAddOnBase.dll
+C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderSQL\bin\x86\Debug\SAPbouiCOM.dll
+C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderSQL\bin\x86\Debug\SboAddOnBase.pdb
+C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderSQL\bin\x86\Debug\SboAddOnBase.xml
+C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderSQL\bin\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderSQL\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderSQL\obj\x86\Debug\Interop.SAPbobsCOM.dll
+C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderSQL\obj\x86\Debug\OryxMtceOrderSQL.vbproj.ResolveComReference.cache
+C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderSQL\obj\x86\Debug\OWA.SBO.OryxMtceOrderSQL.Resources.resources
+C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderSQL\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderSQL\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderSQL\obj\x86\Debug\OryxMtceOrderSQL.dll
+C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderSQL\obj\x86\Debug\OryxMtceOrderSQL.xml
+C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderSQL\obj\x86\Debug\OryxMtceOrderSQL.pdb

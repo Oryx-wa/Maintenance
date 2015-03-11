@@ -1,0 +1,22 @@
+﻿declare @tcBatch varchar(10)
+
+set @tcBatch='OWAPARAM1'
+Declare @tmp Table (empid varchar(10), scale varchar(8))
+
+Insert @tmp (empid, scale)
+select U_cempid, U_scale
+from [@OWA_CVARIABLEITEMS] 
+Where U_cprhcode = @tcBatch
+
+SELECT a.Code , b.U_EmpID EmpID , c.U_LName LName, c.U_FName FName, d.Scale, b.U_WageCode WCode, 
+	U_WageName WName, b.U_WageClass WClass,b.U_Amount Amount, b.U_cPrhCode PrhCode, b.U_Project Project
+	FROM [@OWA_CPRUNHISTORY] a INNER JOIN [@OWA_CPAYROLLDETAILS] b
+	ON a.Code=b.U_cPrhCode	INNER JOIN [@OWA_CASUALMASTER] c
+	ON b.U_EmpID= c.Code 
+	JOIN @tmp d ON  c.code = d.empid 
+WHERE b.U_cPrhCode=@tcBatch 
+	order by b.U_Project
+	
+
+
+

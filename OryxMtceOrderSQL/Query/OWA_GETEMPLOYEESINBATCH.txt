@@ -1,0 +1,20 @@
+﻿Declare @tcBatchCode char(8), @tcType char(10)
+
+Set @tcBatchCode = 'OWAPARAM1'
+Set @tcType = 'OWAPARAM2'
+	
+IF @tcType = 'Employees'
+BEGIN
+    SELECT  RTRIM(a.LastName) + ', '+ RTRIM(a.FirstName) AS Name,CAST(a.empid AS char(8)) AS code
+    FROM OHEM a JOIN [@OWA_empPRun] b
+	    ON a.empid = b.U_empid
+	    JOIN [@OWA_prunhistory] c ON c.U_pruncd = b.U_pruncd and c.code = @tcBatchCode			
+END
+IF @tcType = 'Wage Items'
+BEGIN
+    SELECT  a.code , a.name
+    FROM [@OWA_wageitems] a JOIN [@OWA_PAYROLLRUN] b
+	    ON a.U_pruncode = b.code
+	    JOIN [@OWA_prunhistory] c ON c.U_pruncd = b.code and c.code = @tcBatchCode
+    WHERE	a.U_Wagetype IN ('VI', 'VD')
+END

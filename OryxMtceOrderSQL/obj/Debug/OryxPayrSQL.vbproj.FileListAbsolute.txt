@@ -1,0 +1,8 @@
+C:\Oryx\OryxPayr30\OryxPayrSQL\bin\Debug\OryxPayrSQL.dll
+C:\Oryx\OryxPayr30\OryxPayrSQL\bin\Debug\OryxPayrSQL.pdb
+C:\Oryx\OryxPayr30\OryxPayrSQL\bin\Debug\OryxPayrSQL.xml
+C:\Oryx\OryxPayr30\OryxPayrSQL\obj\Debug\OryxPayrSQL.Resources.resources
+C:\Oryx\OryxPayr30\OryxPayrSQL\obj\Debug\OryxPayrSQL.vbproj.GenerateResource.Cache
+C:\Oryx\OryxPayr30\OryxPayrSQL\obj\Debug\OryxPayrSQL.dll
+C:\Oryx\OryxPayr30\OryxPayrSQL\obj\Debug\OryxPayrSQL.xml
+C:\Oryx\OryxPayr30\OryxPayrSQL\obj\Debug\OryxPayrSQL.pdb

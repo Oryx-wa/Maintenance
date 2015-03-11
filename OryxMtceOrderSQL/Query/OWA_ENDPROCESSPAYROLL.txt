@@ -1,0 +1,127 @@
+﻿DECLARE @tcBatch char(8),
+	@tcPaycode char(8) , 
+	@tdStart datetime,
+	@tdEnd datetime 
+
+SET	@tcBatch='OWAPARAM1'
+
+SELECT @tcPayCode  = U_pruncd, @tdStart = U_dStart, @tdEnd = U_dEnd
+	FROM [@OWA_prunhistory]
+	WHERE code = @tcBatch
+
+DECLARE @lnDays int
+SELECT @lndays = datediff(dd,@tdStart,@tdEnd) + 1
+
+SELECT a.LastName, a.firstname, a.empid, a.startdate , a.U_Taxable taxable
+	INTO #tmpEmployees
+	FROM OHEM a JOIN [@OWA_empPrun] b
+	ON a.empid = b.U_empID 
+	WHERE b.U_pruncd = @tcPayCode  
+	AND (a.U_dispay <> 'Y' OR a.U_dispay is null)
+
+UPDATE tmpwage
+	SET Amount = (Amount  / @lnDays) * (datediff(dd,b.startdate,@tdEnd) + 1)
+	FROM tmpwage a JOIN #tmpEmployees b ON a.empid = b.empid
+	WHERE b.startdate > @tdStart AND wagecls NOT IN ('VI','VD','SA')
+
+
+DECLARE @prunsummary TABLE (code int IDENTITY(1, 1) NOT NULL,
+	name1 varchar(4) , U_empid int,
+	U_prhCode char(8) ,U_basic numeric(19,6),
+	U_fxdinc numeric(19,6),U_varinc numeric(19,6),
+	U_fxdded numeric(19,6),U_varded  numeric(19,6),
+	U_loanded numeric(19,6),U_taxes numeric(19,6),
+	U_netpay numeric(19,6), U_oldarpd numeric(19,6), 
+	U_totpay numeric(19,6),	U_saladv numeric(19,6), 
+	U_loanbal numeric(19,6), tmp varchar(5))
+		
+SELECT
+	empid, 
+	SUM(CASE wagecls WHEN 'B' THEN Amount ELSE 0 END) AS basic,
+	SUM(CASE wagecls WHEN 'FI' THEN Amount ELSE 0 END) AS fxdinc,
+	SUM(CASE wagecls WHEN 'FD' THEN Amount ELSE 0 END) AS fxdded,
+	SUM(CASE wagecls WHEN 'VI' THEN Amount ELSE 0 END) AS varinc,
+	SUM(CASE wagecls WHEN 'VD' THEN Amount ELSE 0 END) AS varded,
+	SUM(CASE wagecls WHEN 'TX' THEN Amount ELSE 0 END) AS tax,
+	SUM(CASE wagecls WHEN 'LD' THEN Amount ELSE 0 END) AS loans,
+	SUM(CASE wagecls WHEN 'SA' THEN Amount ELSE 0 END) AS SALADV
+	INTO #tmp1
+	FROM tmpWage	
+	GROUP BY empid
+
+		
+
+INSERT @prunsummary (U_empid, Name1,U_prhcode,U_basic,
+	U_fxdinc, U_varinc, U_fxdded, U_varded,
+	U_loanded, U_saladv,U_taxes, U_Netpay, U_totPay)
+	SELECT empid,@tcBatch,@tcBatch,basic, fxdinc, 
+		varinc,fxdded,varded, loans, saladv, tax,
+		(basic + fxdinc + varinc - fxdded - varded - loans - saladv - tax),
+		(basic + fxdinc + varinc )
+	FROM #tmp1
+
+		
+
+INSERT [@OWA_PRUNSUMMARY] (Code, Name, U_Empid, U_prhcode, 
+	U_varinc, U_fxdinc, U_Basic, U_fxdded,U_loanded, 
+	U_taxes, U_Netpay, U_totpay, U_saladv,U_varded  ) 
+	SELECT RTRIM(CAST(code AS varCHAR(5))) + (REPLICATE('0', 4 - LEN(Name1)) + Name1) one, 
+	RTRIM(CAST(code AS varCHAR(5))) + (REPLICATE('0', 4 - LEN(Name1)) + Name1) two, 
+		U_Empid, U_prhcode, U_varinc, U_fxdinc, U_Basic, U_fxdded, U_loanded, U_taxes,
+		U_Netpay, U_totpay, U_saladv,	U_varded
+	FROM @prunsummary
+
+		
+
+UPDATE tmpWage
+SET prscode = b.code, prhcode = @tcBatch
+FROM tmpWage a JOIN [@OWA_PRUNSUMMARY] b 
+	ON a.empid = b.U_empid AND U_prhcode = @tcBatch
+			
+		
+
+declare @Seed int
+SELECT @seed = ISNULL(MAX(CAST(code AS int)),1) FROM [@OWA_PAYROLLDETAILS]
+
+DECLARE @PayDet Table (code int identity(1,1) ,
+	name char(100),	U_wagecode char(10), 
+	U_taxable char(5), U_Amount money,
+	U_wagecls char(10),U_acctcode char(20), 
+	U_prscode char(8), U_prhcode char(8), U_loanR char(10))
+
+		
+		
+INSERT @paydet ( name, U_wagecode, U_taxable, U_Amount, U_wagecls,
+								U_acctcOde, U_prscode, U_prhcode,U_loanR)
+	SELECT  RTRIM(CAST(code AS CHAR(5))) + RTRIM(prscode) two, 
+	wagecode,taxable, amount, wagecls,
+	acctcode,prscode,prhcode,loanr
+	FROM tmpWage WHERE Amount <> 0							
+	
+
+INSERT [@OWA_PAYROLlDETAILS] (code, name, U_wagecode, U_taxable, 
+	U_Amount, U_wagecls,U_acctcOde, U_prscode, U_prhcode,U_loanR)
+	SELECT CAST(code + @Seed AS char(8)), CAST(code + @Seed AS char(8)), 
+	U_wagecode, U_taxable, U_Amount, U_wagecls,
+	U_acctcOde, U_prscode, U_prhcode,U_loanR
+	FROM @paydet
+		
+		
+
+UPDATE [@OWA_PRUNHISTORY]
+SET U_fxdinc = b.fxdinc, U_Basic = b.basic, U_fxdded = b.fxdded,
+	U_varded = b.varded, U_loanded = b.loanded, U_taxes = b.tax,
+	U_NetPay = b.NetPay, U_saladv = b.saladv, U_varinc = b.varinc
+	FROM [@OWA_PRUNHISTORY] a JOIN 
+	(SELECT U_prhcode,SUM(U_varinc) varinc, SUM(U_fxdinc) fxdinc,
+		SUM(U_Basic) basic, SUM(U_fxdded) fxdded, SUM(U_loanded) loanded,
+		SUM(U_taxes) tax, SUM(U_netpay) netpay, SUM(U_saladv) saladv,
+		SUM(U_varded) varded 
+	 FROM [@OWA_PRUNSUMMARY]
+	 GROUP BY U_prhcode ) b
+	ON a.code = b.U_prhcode
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[tmpWage]') 
+	and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+	drop table [tmpWage]

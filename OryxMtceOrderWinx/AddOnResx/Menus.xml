@@ -1,0 +1,29 @@
+<Application>
+	<Menus>
+		<action type="remove">
+			<Menu UniqueID="OWA_MOR"/>
+		</action>
+	</Menus>
+	<Menus>
+		<action type="add">
+			<Menu Checked="0" Enabled="1" FatherUID="3584" String="Plant Maintenance" Type="2" UniqueID="OWA_MOR" Image="" position="4">
+				<Menus>
+					<action type="add">
+            <Menu Checked="0"  Enabled="1" FatherUID="OWA_MOR" String="Setup" Type="2" UniqueID="OWA_MORSETUP" Image="">
+              <Menus>
+                <action type="add">
+                  <Menu Checked="0" Enabled="1" FatherUID="OWA_MORSETUP" String="Configuration" Type="1" UniqueID="m_config"/>
+                </action>
+              </Menus>
+            </Menu>
+
+            <Menu Checked="0" Enabled="1" FatherUID="OWA_MOR" String="Mtce Order" Type="1" UniqueID="m_mtceord"/>
+
+          </action>
+				</Menus>
+        
+			</Menu>
+      
+		</action>
+	</Menus>
+</Application>
