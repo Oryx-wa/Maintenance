@@ -82,8 +82,14 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddOnForms\MachBrkDown.b1f.vb">
+      <DependentUpon>MachBrkDown.b1f</DependentUpon>
+    </Compile>
     <Compile Include="AddOnForms\PMtceOrd.b1f.vb">
       <DependentUpon>PMtceOrd.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="AddOnForms\UDOForm1.b1f.vb">
+      <DependentUpon>UDOForm1.b1f</DependentUpon>
     </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -115,9 +121,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="AddOnForms\MachBrkDown.b1f" />
     <None Include="AddOnForms\PMtceOrd.b1f">
       <FormCategory>UserForm</FormCategory>
     </None>
+    <None Include="AddOnForms\UDOForm1.b1f" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

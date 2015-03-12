@@ -8,6 +8,16 @@ Public Class PMtceOrd
     Dim dbItem As SAPbouiCOM.DBDataSource
     Dim dbOrderDet As SAPbouiCOM.DBDataSource
 
+    Private matOrdDet As SAPbouiCOM.Matrix
+    Private txtMach As SAPbouiCOM.EditText
+    Private txtMachGrp As SAPbouiCOM.EditText
+    Private txtOprName As SAPbouiCOM.EditText
+    Private cboMach As SAPbouiCOM.ComboBox
+    Private colPrice As SAPbouiCOM.Column
+    Private colQty As SAPbouiCOM.Column
+    Private colAmt As SAPbouiCOM.Column
+
+
     Sub New(ByVal pAddon As SboAddon, ByVal pForm As SAPbouiCOM.IForm)
         MyBase.New(pAddon, pForm)
         InitSBOServerSQL(New BusObjectInfoSQL(pAddon))
@@ -62,14 +72,6 @@ Public Class PMtceOrd
     End Sub
 
    
-    Private matOrdDet As SAPbouiCOM.Matrix
-    Private txtMach As SAPbouiCOM.EditText
-    Private txtMachGrp As SAPbouiCOM.EditText
-    Private txtOprName As SAPbouiCOM.EditText
-    Private cboMach As SAPbouiCOM.ComboBox
-    Private colPrice As SAPbouiCOM.Column
-    Private colQty As SAPbouiCOM.Column
-    Private colAmt As SAPbouiCOM.Column
 
     Protected Overrides Sub OnFormLoad()
         MyBase.OnFormLoad()
@@ -149,24 +151,21 @@ Public Class PMtceOrd
 
     End Sub
 
-    Public Overrides Sub OnCustomInit()
-        MyBase.OnCustomInit()
+    Protected Overrides Sub OnFormInit()
+        MyBase.OnFormInit()
+
         matOrdDet = CType(Me.m_Form.Items.Item("matOrdDet").Specific, SAPbouiCOM.Matrix)
-        cboMach = m_Form.Items.Item("cboMach").Specific
+        cboMach = CType(Me.m_Form.Items.Item("cboMach").Specific, SAPbouiCOM.ComboBox)
         txtMach = m_Form.Items.Item("txtMach").Specific
         txtMachGrp = m_Form.Items.Item("txtMachGrp").Specific
+
+        'colQty = CType(m_Form.Items.Item("txtMachGrp").Specific, SAPbouiCOM.Matrix).Columns.Item("cQty")
+        'colPrice = CType(m_Form.Items.Item("txtMachGrp").Specific, SAPbouiCOM.Matrix).Columns.Item("cPrice")
+        'colAmt = CType(m_Form.Items.Item("txtMachGrp").Specific, SAPbouiCOM.Matrix).Columns.Item("cAmt")
+
     End Sub
 
-    'Protected Overrides Sub InitFormComponents()
-    '    MyBase.InitFormComponents()
 
-
-    '    'colQty = CType(m_Form.Items.Item("txtMachGrp").Specific, SAPbouiCOM.Matrix).Columns.Item("cQty")
-    '    'colPrice = CType(m_Form.Items.Item("txtMachGrp").Specific, SAPbouiCOM.Matrix).Columns.Item("cPrice")
-    '    'colAmt = CType(m_Form.Items.Item("txtMachGrp").Specific, SAPbouiCOM.Matrix).Columns.Item("cAmt")
-
-
-    'End Sub
     Protected Overrides Sub OnMatrixAddRow()
         MyBase.OnMatrixAddRow()
         AddRowToMatrix(matOrdDet)

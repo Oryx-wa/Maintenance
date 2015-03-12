@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Oryx>
-  <Forms Name="PMtceOrd_b1f" MenuUID="m_mtceord" PermID="OWA_MOR001" PermCategory="OWA_MOR"/>
-  
+  <Forms Name="PMtceOrd_b1f" MenuUID="m_mtceord"   PermID="OWA_MOR001" PermCategory="OWA_MOR"/>
+  <Forms Name="MachBrkDown_b1f" MenuUID="m_brkdwn" PermID="OWA_MOR002" PermCategory="OWA_MOR"/>
+
+
 </Oryx>

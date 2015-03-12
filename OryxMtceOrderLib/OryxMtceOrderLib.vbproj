@@ -126,6 +126,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddOnClasses\MachBrkDown.vb" />
     <Compile Include="AddOnClasses\PMtceOrd.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

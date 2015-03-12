@@ -32,3 +32,19 @@ C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Ma
 C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderLib\obj\Debug\OryxMtceOrderLib.dll
 C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderLib\obj\Debug\OryxMtceOrderLib.xml
 C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderLib\obj\Debug\OryxMtceOrderLib.pdb
+C:\Programs\Maintenance\OryxMtceOrderLib\bin\Debug\OryxMtceOrderLib.dll
+C:\Programs\Maintenance\OryxMtceOrderLib\bin\Debug\OryxMtceOrderLib.pdb
+C:\Programs\Maintenance\OryxMtceOrderLib\bin\Debug\OryxMtceOrderLib.xml
+C:\Programs\Maintenance\OryxMtceOrderLib\bin\Debug\OryxMtceOrderSQL.dll
+C:\Programs\Maintenance\OryxMtceOrderLib\bin\Debug\SboAddOnBase.dll
+C:\Programs\Maintenance\OryxMtceOrderLib\bin\Debug\SboAddOnBase.pdb
+C:\Programs\Maintenance\OryxMtceOrderLib\bin\Debug\SboAddOnBase.xml
+C:\Programs\Maintenance\OryxMtceOrderLib\bin\Debug\OryxMtceOrderSQL.pdb
+C:\Programs\Maintenance\OryxMtceOrderLib\bin\Debug\OryxMtceOrderSQL.xml
+C:\Programs\Maintenance\OryxMtceOrderLib\obj\Debug\ResolveAssemblyReference.cache
+C:\Programs\Maintenance\OryxMtceOrderLib\obj\Debug\OWA.SBO.OryxMtceOrderLib.Resources.resources
+C:\Programs\Maintenance\OryxMtceOrderLib\obj\Debug\GenerateResource.read.1.tlog
+C:\Programs\Maintenance\OryxMtceOrderLib\obj\Debug\GenerateResource.write.1.tlog
+C:\Programs\Maintenance\OryxMtceOrderLib\obj\Debug\OryxMtceOrderLib.dll
+C:\Programs\Maintenance\OryxMtceOrderLib\obj\Debug\OryxMtceOrderLib.xml
+C:\Programs\Maintenance\OryxMtceOrderLib\obj\Debug\OryxMtceOrderLib.pdb

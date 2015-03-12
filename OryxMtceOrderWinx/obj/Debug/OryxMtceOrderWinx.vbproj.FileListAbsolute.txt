@@ -36,3 +36,25 @@ C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Ma
 C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderWinx\obj\Debug\OryxMtceOrderWinx.exe
 C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderWinx\obj\Debug\OryxMtceOrderWinx.xml
 C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderWinx\obj\Debug\OryxMtceOrderWinx.pdb
+C:\Programs\Maintenance\OryxMtceOrderWinx\obj\Debug\OryxMtceOrderWinx.exe
+C:\Programs\Maintenance\OryxMtceOrderWinx\obj\Debug\OryxMtceOrderWinx.xml
+C:\Programs\Maintenance\OryxMtceOrderWinx\obj\Debug\OryxMtceOrderWinx.pdb
+C:\Programs\Maintenance\OryxMtceOrderWinx\bin\Debug\OryxMtceOrderWinx.exe
+C:\Programs\Maintenance\OryxMtceOrderWinx\bin\Debug\OryxMtceOrderWinx.pdb
+C:\Programs\Maintenance\OryxMtceOrderWinx\bin\Debug\OryxMtceOrderWinx.xml
+C:\Programs\Maintenance\OryxMtceOrderWinx\bin\Debug\OryxMtceOrderLib.dll
+C:\Programs\Maintenance\OryxMtceOrderWinx\bin\Debug\SboAddOnBase.dll
+C:\Programs\Maintenance\OryxMtceOrderWinx\bin\Debug\OryxMtceOrderSQL.dll
+C:\Programs\Maintenance\OryxMtceOrderWinx\bin\Debug\SboAddOnBase.pdb
+C:\Programs\Maintenance\OryxMtceOrderWinx\bin\Debug\SboAddOnBase.xml
+C:\Programs\Maintenance\OryxMtceOrderWinx\bin\Debug\OryxMtceOrderLib.pdb
+C:\Programs\Maintenance\OryxMtceOrderWinx\bin\Debug\OryxMtceOrderLib.xml
+C:\Programs\Maintenance\OryxMtceOrderWinx\bin\Debug\OryxMtceOrderSQL.pdb
+C:\Programs\Maintenance\OryxMtceOrderWinx\bin\Debug\OryxMtceOrderSQL.xml
+C:\Programs\Maintenance\OryxMtceOrderWinx\obj\Debug\ResolveAssemblyReference.cache
+C:\Programs\Maintenance\OryxMtceOrderWinx\obj\Debug\OWA.SBO.OryxMtceOrderWinx.Resources.resources
+C:\Programs\Maintenance\OryxMtceOrderWinx\obj\Debug\GenerateResource.read.1.tlog
+C:\Programs\Maintenance\OryxMtceOrderWinx\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\1SAdmin\Documents\GitHub\Maintenance\OryxMtceOrderWinx\obj\Debug\OryxMtceOrderWinx.exe
+C:\Users\1SAdmin\Documents\GitHub\Maintenance\OryxMtceOrderWinx\obj\Debug\OryxMtceOrderWinx.xml
+C:\Users\1SAdmin\Documents\GitHub\Maintenance\OryxMtceOrderWinx\obj\Debug\OryxMtceOrderWinx.pdb
