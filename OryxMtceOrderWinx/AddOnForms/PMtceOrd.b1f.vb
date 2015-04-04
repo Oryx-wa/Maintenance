@@ -25,9 +25,7 @@ Friend Class PMtceOrd_b1f
         Me.Button1 = CType(Me.GetItem("2").Specific, SAPbouiCOM.Button)
         Me.matOrdDet = CType(Me.GetItem("matOrdDet").Specific, SAPbouiCOM.Matrix)
         Me.cboMach = CType(Me.GetItem("cboMach").Specific, SAPbouiCOM.ComboBox)
-        'Me.colQty = CType(Me.GetItem("matOrdDet").Specific, SAPbouiCOM.Matrix).Columns.Item("cQty")
-        'Me.colPrice = CType(Me.GetItem("matOrdDet").Specific, SAPbouiCOM.Matrix).Columns.Item("cPrice")
-        'Me.colAmt = CType(Me.GetItem("matOrdDet").Specific, SAPbouiCOM.Matrix).Columns.Item("cAmt")
+        Me.EditText0 = CType(Me.GetItem("Item_103").Specific, SAPbouiCOM.EditText)
         Me.OnCustomInitialize()
 
     End Sub
@@ -77,7 +75,7 @@ Friend Class PMtceOrd_b1f
 
 
     Public Overrides Sub OnInitializeFormEvents()
-     
+
     End Sub
 
     Protected Overrides Sub EnableToolBarButtons()
@@ -94,6 +92,7 @@ Friend Class PMtceOrd_b1f
     Private WithEvents colPrice As SAPbouiCOM.Column
     Private WithEvents colQty As SAPbouiCOM.Column
     Private WithEvents colAmt As SAPbouiCOM.Column
+    Private WithEvents EditText0 As SAPbouiCOM.EditText
 
     'Private Sub OnValidateAfter(ByVal sboObject As Object, ByVal pVal As SAPbouiCOM.SBOItemEventArg) Handles colQty.ValidateAfter, colPrice.ValidateAfter
     '    m_BaseObject.OnItemValidateAfter(sboObject, pVal)

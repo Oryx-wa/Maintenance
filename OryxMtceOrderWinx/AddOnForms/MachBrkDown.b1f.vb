@@ -30,15 +30,13 @@ Imports OWA.SBO.OryxMtceOrderLib
 
 
     Public Overrides Sub OnInitializeComponent()
-        Me.txtPOdr = CType(Me.GetItem("txtPOdr").Specific, SAPbouiCOM.EditText)
-        Me.txtPrd = CType(Me.GetItem("txtPrd").Specific, SAPbouiCOM.EditText)
         Me.txtOpr = CType(Me.GetItem("txtOpr").Specific, SAPbouiCOM.EditText)
         Me.Button0 = CType(Me.GetItem("1").Specific, SAPbouiCOM.Button)
         Me.Button1 = CType(Me.GetItem("2").Specific, SAPbouiCOM.Button)
-        Me.lblMachName = CType(Me.GetItem("MachName").Specific, SAPbouiCOM.StaticText)
-        Me.lblOprName = CType(Me.GetItem("OprName").Specific, SAPbouiCOM.StaticText)
-        Me.lblprdName = CType(Me.GetItem("prdName").Specific, SAPbouiCOM.StaticText)
         Me.cboMach = CType(Me.GetItem("cboMach").Specific, SAPbouiCOM.ComboBox)
+        Me.EditText0 = CType(Me.GetItem("txtTime").Specific, SAPbouiCOM.EditText)
+        Me.EditText1 = CType(Me.GetItem("Item_4").Specific, SAPbouiCOM.EditText)
+        Me.EditText3 = CType(Me.GetItem("Item_7").Specific, SAPbouiCOM.EditText)
         Me.OnCustomInitialize()
 
     End Sub
@@ -65,6 +63,11 @@ Imports OWA.SBO.OryxMtceOrderLib
     Protected Overrides Sub EnableToolBarButtons()
         MyBase.EnableToolBarButtons()
     End Sub
+    Private WithEvents StaticText0 As SAPbouiCOM.StaticText
+    Private WithEvents EditText0 As SAPbouiCOM.EditText
+    Private WithEvents EditText1 As SAPbouiCOM.EditText
+    Private WithEvents EditText2 As SAPbouiCOM.EditText
+    Private WithEvents EditText3 As SAPbouiCOM.EditText
   
 
    

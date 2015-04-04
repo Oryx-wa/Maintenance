@@ -53,9 +53,9 @@ Public Class MachBrkDown
     Protected Overrides Sub OnFormInit()
         MyBase.OnFormInit()
 
-        txtPOdr = CType(Me.m_Form.Items.Item("txtPOdr").Specific, SAPbouiCOM.EditText)
-        lblOprName = CType(Me.m_Form.Items.Item("OprName").Specific, SAPbouiCOM.StaticText)
-        txtPrd = CType(Me.m_Form.Items.Item("txtPrd").Specific, SAPbouiCOM.EditText)
+        'txtPOdr = CType(Me.m_Form.Items.Item("txtPOdr").Specific, SAPbouiCOM.EditText)
+        'lblOprName = CType(Me.m_Form.Items.Item("OprName").Specific, SAPbouiCOM.StaticText)
+        'txtPrd = CType(Me.m_Form.Items.Item("txtPrd").Specific, SAPbouiCOM.EditText)
         
 
     End Sub
