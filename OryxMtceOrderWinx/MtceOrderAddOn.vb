@@ -55,6 +55,6 @@ Public Class MtceOrderAddOn
         file.Write(strLog)
         file.Close()
     End Sub
-
-
 End Class
+
+

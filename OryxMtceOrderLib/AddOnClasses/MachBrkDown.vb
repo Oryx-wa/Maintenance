@@ -57,7 +57,7 @@ Public Class MachBrkDown
         'lblOprName = CType(Me.m_Form.Items.Item("OprName").Specific, SAPbouiCOM.StaticText)
         'txtPrd = CType(Me.m_Form.Items.Item("txtPrd").Specific, SAPbouiCOM.EditText)
         
-
+        cboMach = CType(Me.m_Form.Items.Item("cboMach").Specific, SAPbouiCOM.ComboBox)
     End Sub
     Public Overrides Sub OnComponentInit()
         MyBase.OnComponentInit()
@@ -83,7 +83,7 @@ Public Class MachBrkDown
     Protected Overrides Sub OnFormLoad()
         MyBase.OnFormLoad()
 
-        'fillCombo("VisResCode", "ResName", "ORSC", cboMach.ValidValues, "ResType='M'")
+        fillCombo("VisResCode", "ResName", "ORSC", cboMach.ValidValues, "ResType='M'")
 
     End Sub
 

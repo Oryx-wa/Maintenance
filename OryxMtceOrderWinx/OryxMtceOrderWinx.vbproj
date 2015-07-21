@@ -42,19 +42,20 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\x86\Debug\</OutputPath>
     <DocumentationFile>OryxMtceOrderWinx.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <DebugType>pdbonly</DebugType>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\x86\Release\</OutputPath>
     <DocumentationFile>OryxMtceOrderWinx.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -113,11 +114,26 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddOnForms\GoodsIssue.b1f.vb">
+      <DependentUpon>GoodsIssue.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="AddOnForms\InventoryTransferRequest.b1f.vb">
+      <DependentUpon>InventoryTransferRequest.b1f</DependentUpon>
+    </Compile>
     <Compile Include="AddOnForms\MachBrkDown.b1f.vb">
       <DependentUpon>MachBrkDown.b1f</DependentUpon>
     </Compile>
     <Compile Include="AddOnForms\PMtceOrd.b1f.vb">
       <DependentUpon>PMtceOrd.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="AddOnForms\prtypes.b1f.vb">
+      <DependentUpon>prtypes.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="AddOnForms\PurchaseOrder1.b1f.vb">
+      <DependentUpon>PurchaseOrder1.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="AddOnForms\PurchaseRequest.b1f.vb">
+      <DependentUpon>PurchaseRequest.b1f</DependentUpon>
     </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -149,11 +165,38 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\..\..\..\Local\Temp\1\B1\1250000940+.+.srf__orig_srf">
+      <Link>1250000940+.+.srf__orig_srf</Link>
+    </None>
+    <None Include="..\..\..\..\..\..\Local\Temp\1\B1\142+.+.srf__orig_srf">
+      <Link>142+.+.srf__orig_srf</Link>
+    </None>
+    <None Include="..\..\..\..\..\..\Local\Temp\1\B1\1470000200+.+.srf__orig_srf">
+      <Link>1470000200+.+.srf__orig_srf</Link>
+    </None>
+    <None Include="..\..\..\..\..\..\Local\Temp\1\B1\720+.+.srf__orig_srf">
+      <Link>720+.+.srf__orig_srf</Link>
+    </None>
+    <None Include="AddOnForms\GoodsIssue.b1f">
+      <FormCategory>SystemForm</FormCategory>
+    </None>
+    <None Include="AddOnForms\InventoryTransferRequest.b1f">
+      <FormCategory>SystemForm</FormCategory>
+    </None>
     <None Include="AddOnForms\MachBrkDown.b1f">
       <FormCategory>UserForm</FormCategory>
     </None>
     <None Include="AddOnForms\PMtceOrd.b1f">
       <FormCategory>UserForm</FormCategory>
+    </None>
+    <None Include="AddOnForms\prtypes.b1f">
+      <FormCategory>UDOForm</FormCategory>
+    </None>
+    <None Include="AddOnForms\PurchaseOrder1.b1f">
+      <FormCategory>SystemForm</FormCategory>
+    </None>
+    <None Include="AddOnForms\PurchaseRequest.b1f">
+      <FormCategory>SystemForm</FormCategory>
     </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">

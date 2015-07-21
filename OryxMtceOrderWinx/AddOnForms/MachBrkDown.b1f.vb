@@ -35,19 +35,20 @@ Imports OWA.SBO.OryxMtceOrderLib
         Me.Button1 = CType(Me.GetItem("2").Specific, SAPbouiCOM.Button)
         Me.cboMach = CType(Me.GetItem("cboMach").Specific, SAPbouiCOM.ComboBox)
         Me.EditText0 = CType(Me.GetItem("txtTime").Specific, SAPbouiCOM.EditText)
-        Me.EditText1 = CType(Me.GetItem("Item_4").Specific, SAPbouiCOM.EditText)
-        Me.EditText3 = CType(Me.GetItem("Item_7").Specific, SAPbouiCOM.EditText)
+        Me.EditText1 = CType(Me.GetItem("txtPrd").Specific, SAPbouiCOM.EditText)
+        Me.LinkedButton0 = CType(Me.GetItem("Item_3").Specific, SAPbouiCOM.LinkedButton)
+        Me.EditText3 = CType(Me.GetItem("txtDate").Specific, SAPbouiCOM.EditText)
         Me.OnCustomInitialize()
 
     End Sub
 
-    Private Sub txtPOdr_ChooseFromListAfter(ByVal sboObject As Object, ByVal pVal As SAPbouiCOM.SBOItemEventArg) Handles txtPOdr.ChooseFromListAfter
-        m_BaseObject.OnChooseFromListAfter(sboObject, pVal)
-    End Sub
+    'Private Sub txtPOdr_ChooseFromListAfter(ByVal sboObject As Object, ByVal pVal As SAPbouiCOM.SBOItemEventArg) Handles txtPOdr.ChooseFromListAfter
+    '    m_BaseObject.OnChooseFromListAfter(sboObject, pVal)
+    'End Sub
 
-    Private Sub txtPOdr_ChooseFromListBefore(ByVal sboObject As Object, ByVal pVal As SAPbouiCOM.SBOItemEventArg, ByRef BubbleEvent As Boolean) Handles txtPOdr.ChooseFromListBefore
-        m_BaseObject.OnChooseFromListBefore(sboObject, pVal, BubbleEvent)
-    End Sub
+    'Private Sub txtPOdr_ChooseFromListBefore(ByVal sboObject As Object, ByVal pVal As SAPbouiCOM.SBOItemEventArg, ByRef BubbleEvent As Boolean) Handles txtPOdr.ChooseFromListBefore
+    '    m_BaseObject.OnChooseFromListBefore(sboObject, pVal, BubbleEvent)
+    'End Sub
 
  
 
@@ -65,11 +66,13 @@ Imports OWA.SBO.OryxMtceOrderLib
     End Sub
     Private WithEvents StaticText0 As SAPbouiCOM.StaticText
     Private WithEvents EditText0 As SAPbouiCOM.EditText
-    Private WithEvents EditText1 As SAPbouiCOM.EditText
     Private WithEvents EditText2 As SAPbouiCOM.EditText
+    Private WithEvents EditText1 As SAPbouiCOM.EditText
+    Private WithEvents LinkedButton0 As SAPbouiCOM.LinkedButton
     Private WithEvents EditText3 As SAPbouiCOM.EditText
-  
 
-   
 
+
+
+    
 End Class

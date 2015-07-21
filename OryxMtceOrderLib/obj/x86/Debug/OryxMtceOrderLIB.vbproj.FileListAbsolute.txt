@@ -16,3 +16,18 @@ C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderLib\obj\x86\Debug\GenerateR
 C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderLib\obj\x86\Debug\OryxMtceOrderLib.dll
 C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderLib\obj\x86\Debug\OryxMtceOrderLib.xml
 C:\Programs\OryxMtceOrder\OryxMtceOrder\OryxMtceOrderLib\obj\x86\Debug\OryxMtceOrderLib.pdb
+C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderLib\bin\x86\Debug\OryxMtceOrderLib.dll
+C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderLib\bin\x86\Debug\OryxMtceOrderLib.pdb
+C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderLib\bin\x86\Debug\OryxMtceOrderLib.xml
+C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderLib\bin\x86\Debug\OryxMtceOrderSQL.dll
+C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderLib\bin\x86\Debug\SboAddOnBase.dll
+C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderLib\bin\x86\Debug\SboAddOnBase.pdb
+C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderLib\bin\x86\Debug\SboAddOnBase.xml
+C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderLib\bin\x86\Debug\OryxMtceOrderSQL.pdb
+C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderLib\bin\x86\Debug\OryxMtceOrderSQL.xml
+C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderLib\obj\x86\Debug\OryxMtceOrderLib.vbprojResolveAssemblyReference.cache
+C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderLib\obj\x86\Debug\OWA.SBO.OryxMtceOrderLib.Resources.resources
+C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderLib\obj\x86\Debug\OryxMtceOrderLib.vbproj.GenerateResource.Cache
+C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderLib\obj\x86\Debug\OryxMtceOrderLib.dll
+C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderLib\obj\x86\Debug\OryxMtceOrderLib.xml
+C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderLib\obj\x86\Debug\OryxMtceOrderLib.pdb

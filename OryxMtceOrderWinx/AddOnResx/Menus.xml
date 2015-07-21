@@ -3,11 +3,12 @@
 		<action type="remove">
 			<Menu UniqueID="OWA_MOR"/>
       <Menu UniqueID="m_brkdwn"/>
+      <Menu UniqueID="m_mtceord"/>
 		</action>
 	</Menus>
 	<Menus>
 		<action type="add">
-			<Menu Checked="0" Enabled="1" FatherUID="3584" String="Plant Maintenance" Type="2" UniqueID="OWA_MOR" Image="" position="4">
+			<Menu Checked="0" Enabled="1" FatherUID="43520" String="Plant Maintenance" Type="2" UniqueID="OWA_MOR" Image="" position="14">
 				<Menus>
 					<action type="add">
             <!--<Menu Checked="0"  Enabled="1" FatherUID="OWA_MOR" String="Setup" Type="2" UniqueID="OWA_MORSETUP" Image="">
@@ -17,8 +18,13 @@
                 </action>
               </Menus>
             </Menu>-->
+            <Menu Checked="0" Enabled="1" FatherUID="OWA_MOR" String="Configuration" Type="1"  position="1" UniqueID="m_mtceconfig"/>
+            <Menu Checked="0" Enabled="1" FatherUID="OWA_MOR" String="Problem Types" Type="1"  position="1" UniqueID="m_prtypes"/>
+            <Menu Checked="0" Enabled="1" FatherUID="OWA_MOR" String="Origin Types" Type="1" position="2" UniqueID="m_orgtypes"/>
+            <Menu Checked="0" Enabled="1" FatherUID="OWA_MOR" String="Machine Breakdowns" Type="1"  position="3" UniqueID="m_brkdwn"/>
+            <Menu Checked="0" Enabled="1" FatherUID="OWA_MOR" String="Maintenance Order" Type="1" position="4" UniqueID="m_mtceord"/>
 
-            <Menu Checked="0" Enabled="1" FatherUID="OWA_MOR" String="Mtce Order" Type="1" UniqueID="m_mtceord"/>
+            
 
           </action>
 				</Menus>
@@ -29,9 +35,5 @@
     
 		</action>
 	</Menus>
-  <Menus>
-    <action type="add">
-      <Menu Checked="0" Enabled="1" FatherUID="4352" String="Machine Breakdowns" Type="1"  position="7" UniqueID="m_brkdwn"/>
-    </action>
-  </Menus>
+  
 </Application>

@@ -178,66 +178,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Query\OWA_BANKSCHEDULE.txt" />
-    <EmbeddedResource Include="Query\OWA_BANKSUMMARY.txt" />
-    <EmbeddedResource Include="Query\OWA_CASHSCHEDULE.txt" />
-    <EmbeddedResource Include="Query\OWA_CCALCNETPAY.txt" />
-    <EmbeddedResource Include="Query\OWA_CCALCNETPAY2.txt" />
-    <EmbeddedResource Include="Query\OWA_CCHECKFORMULA.txt" />
-    <EmbeddedResource Include="Query\OWA_CGETCASHPAYMENT.txt" />
-    <EmbeddedResource Include="Query\OWA_CGETPAYSLIPS.txt" />
-    <EmbeddedResource Include="Query\OWA_CHECKFORMULA.txt" />
-    <EmbeddedResource Include="Query\OWA_CHECKFORMULA_PRUN.txt" />
-    <EmbeddedResource Include="Query\OWA_CHKSALHISTORY.txt" />
-    <EmbeddedResource Include="Query\OWA_CHKSCALEHISTORY.txt" />
-    <EmbeddedResource Include="Query\OWA_CJRMCROSSTAB.txt" />
-    <EmbeddedResource Include="Query\OWA_CPAYSHEET.txt" />
-    <EmbeddedResource Include="Query\OWA_CPAYSUMM.txt" />
-    <EmbeddedResource Include="Query\OWA_CPROCESSADVANCE.txt" />
-    <EmbeddedResource Include="Query\OWA_CRUNPAYROLL.txt" />
-    <EmbeddedResource Include="Query\OWA_CVARIABLEUPD.txt" />
-    <EmbeddedResource Include="Query\OWA_CVERIFY.txt" />
-    <EmbeddedResource Include="Query\OWA_ENDPROCESSPAYROLL.txt" />
-    <EmbeddedResource Include="Query\OWA_GETEMPINRUN.txt" />
-    <EmbeddedResource Include="Query\OWA_GETEMPLOANS.txt" />
-    <EmbeddedResource Include="Query\OWA_GETEMPLOYEESINBATCH.txt" />
-    <EmbeddedResource Include="Query\OWA_GETEMPTAX.txt" />
-    <EmbeddedResource Include="Query\OWA_GETEMPWAGE.txt" />
-    <EmbeddedResource Include="Query\OWA_GETNETPAY.txt" />
-    <EmbeddedResource Include="Query\OWA_GETPAYSLIPS.txt" />
-    <EmbeddedResource Include="Query\OWA_GETSCALETOTALS.txt" />
-    <EmbeddedResource Include="Query\OWA_GETSTEPS.txt" />
-    <EmbeddedResource Include="Query\OWA_GETSTEPWAGE.txt" />
-    <EmbeddedResource Include="Query\OWA_GETTAXRETURN.txt" />
-    <EmbeddedResource Include="Query\OWA_GETVARIABLEITEMS.txt" />
-    <EmbeddedResource Include="Query\OWA_GETWAGEAMOUNTS.txt" />
-    <EmbeddedResource Include="Query\OWA_INITPROCESSPAYROLL.txt" />
-    <EmbeddedResource Include="Query\OWA_PAYROLLCONTROL.txt" />
-    <EmbeddedResource Include="Query\OWA_PAYROLLSUMMARY.txt" />
-    <EmbeddedResource Include="Query\OWA_PAYROLLSUMMARYBYDEPT.txt" />
-    <EmbeddedResource Include="Query\OWA_PAYSHEET.txt" />
-    <EmbeddedResource Include="Query\OWA_PROCESSADVANCE.txt" />
-    <EmbeddedResource Include="Query\OWA_PROCESSLOANS.txt" />
-    <EmbeddedResource Include="Query\OWA_PROCESSTAX.txt" />
-    <EmbeddedResource Include="Query\OWA_PROCESSWAGEITEMS.txt" />
-    <EmbeddedResource Include="Query\OWA_REP_EMP_ON_PAYROLL.txt" />
-    <EmbeddedResource Include="Query\OWA_REP_LOANS.txt" />
-    <EmbeddedResource Include="Query\OWA_REP_PAYDED.txt" />
-    <EmbeddedResource Include="Query\OWA_REP_PAYROLLCONTROL.txt" />
-    <EmbeddedResource Include="Query\OWA_REP_PAYSHEET.txt" />
-    <EmbeddedResource Include="Query\OWA_UPDATELOANHISTORY.txt" />
-    <EmbeddedResource Include="Query\OWA_VALIDATEWAGEFORMULA.txt" />
-    <EmbeddedResource Include="Query\OWA_VALIDATEWAGESCALEFORMULA.txt" />
-    <EmbeddedResource Include="Query\OWA_VERIFY.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Query\OWA_CHECKTAXRELIEF.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\SBOAddonBaseNew\SboAddOnBaseNew.vbproj">
       <Project>{A168FDF6-A804-42B9-97B6-64F127AEFB2D}</Project>
       <Name>SboAddOnBaseNew</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Query\MtceTransactions.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

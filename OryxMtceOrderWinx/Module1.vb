@@ -2,7 +2,8 @@
 
 Module Module1
 
-    Private Addon As MtceOrderAddOn
+    Public Addon As MtceOrderAddOn
+
     <STAThread()>
     Public Sub Main()
         Dim dbo_RunApplication As Boolean

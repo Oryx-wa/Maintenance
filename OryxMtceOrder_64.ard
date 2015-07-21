@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AddOnRegData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SlientInstallation="" SlientUpgrade="" Partnernmsp="OWA" SchemaVersion="" Type="" OnDemand="" OnPremise="" ExtName="Oryx Plant Maintenance" ExtVersion="1.025" Contdata="tayo.adegbola@oryx-wa.com" Partner="Oryx Computer Systems" DBType="MSSQL">
+  <Validity>
+    <SBOCompatibility>
+      <Version From="9.150.00" To="9.150.00" />
+    </SBOCompatibility>
+  </Validity>
+  <Configuration>
+    <Repository />
+    <Deployment>
+      <Properties />
+    </Deployment>
+    <Assignment>
+      <Properties />
+    </Assignment>
+  </Configuration>
+  <Addons>
+    <Addon Name="" Group="" ForceFlag="" Visible="" AutoAssign="" SelfUpgrd="">
+      <x86 AddonExe="C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderWinx\bin\x86\Release\OryxMtceOrderWinx.exe" AddonSig="">
+        <Installation>
+          <Files>
+            <File FileName="OryxMtceOrderLib.dll">
+              <Actions />
+            </File>
+            <File FileName="OryxMtceOrderSQL.dll">
+              <Actions />
+            </File>
+            <File FileName="OryxMtceOrderWinx.b1s">
+              <Actions />
+            </File>
+            <File FileName="OryxMtceOrderWinx.exe">
+              <Actions />
+            </File>
+            <File FileName="SboAddOnBase.dll">
+              <Actions />
+            </File>
+          </Files>
+        </Installation>
+        <Uninstallation>
+          <Files>
+            <File FileName="OryxMtceOrderLib.dll">
+              <Actions />
+            </File>
+            <File FileName="OryxMtceOrderSQL.dll">
+              <Actions />
+            </File>
+            <File FileName="OryxMtceOrderWinx.b1s">
+              <Actions />
+            </File>
+            <File FileName="OryxMtceOrderWinx.exe">
+              <Actions />
+            </File>
+            <File FileName="SboAddOnBase.dll">
+              <Actions />
+            </File>
+          </Files>
+        </Uninstallation>
+      </x86>
+      <x64 AddonExe="C:\Users\Administrator\AppData\Roaming\Local Libraries\Local Documents\GitHub\Maintenance\OryxMtceOrderWinx\bin\x64\Release\OryxMtceOrderWinx.exe" AddonSig="">
+        <Installation>
+          <Files>
+            <File FileName="OryxMtceOrderLib.dll">
+              <Actions />
+            </File>
+            <File FileName="OryxMtceOrderSQL.dll">
+              <Actions />
+            </File>
+            <File FileName="OryxMtceOrderWinx.b1s">
+              <Actions />
+            </File>
+            <File FileName="OryxMtceOrderWinx.exe">
+              <Actions />
+            </File>
+            <File FileName="SboAddOnBase.dll">
+              <Actions />
+            </File>
+          </Files>
+        </Installation>
+        <Uninstallation>
+          <Files>
+            <File FileName="OryxMtceOrderLib.dll">
+              <Actions />
+            </File>
+            <File FileName="OryxMtceOrderSQL.dll">
+              <Actions />
+            </File>
+            <File FileName="OryxMtceOrderWinx.b1s">
+              <Actions />
+            </File>
+            <File FileName="OryxMtceOrderWinx.exe">
+              <Actions />
+            </File>
+            <File FileName="SboAddOnBase.dll">
+              <Actions />
+            </File>
+          </Files>
+        </Uninstallation>
+      </x64>
+    </Addon>
+  </Addons>
+  <XApps>
+    <XApp Name="" Path="" FileName="" />
+  </XApps>
+  <UDQs>
+    <UDQ udqname="XXX">
+      <Hana FileName="xxx_h.sql" />
+    </UDQ>
+  </UDQs>
+</AddOnRegData>

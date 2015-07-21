@@ -1,23 +1,148 @@
 ﻿<Tables>
   <usertable>
+    <TableName>OINV</TableName>
+    <TableDescription>OINV</TableDescription>
+    <Tabletype>0</Tabletype>
+    <Secondary>-1</Secondary>
+    <Created>Y</Created>
+    <UseSequence>0</UseSequence>
+    <TableFields>
+      <FieldID>0</FieldID>
+      <TableName>OINV</TableName>
+      <Name>Time</Name>
+      <Type>2</Type>
+      <Size>6</Size>
+      <Description>Time</Description>
+      <DefaultValue />
+      <EditSize>6</EditSize>
+      <LinkedTable />
+      <Mandatory>N</Mandatory>
+      <Created>N</Created>
+      <EditType>T</EditType>
+    </TableFields>
+    <TableFields>
+      <FieldID>1</FieldID>
+      <TableName>OINV</TableName>
+      <Name>PO_Type</Name>
+      <Type>0</Type>
+      <Size>10</Size>
+      <Description>PO Type</Description>
+      <DefaultValue>NormalPO</DefaultValue>
+      <EditSize>10</EditSize>
+      <Mandatory>N</Mandatory>
+      <Created>N</Created>
+      <EditType> </EditType>
+      <ValidValues>
+        <TableName>OINV</TableName>
+        <FieldID>1</FieldID>
+        <IndexID>0</IndexID>
+        <Value>NormalPO</Value>
+        <Description>Normal PO</Description>
+      </ValidValues>
+      <ValidValues>
+        <TableName>OINV</TableName>
+        <FieldID>1</FieldID>
+        <IndexID>1</IndexID>
+        <Value>SparesPO</Value>
+        <Description>Consumable Spares PO</Description>
+      </ValidValues>
+    </TableFields>
+    <TableFields>
+      <FieldID>2</FieldID>
+      <TableName>OINV</TableName>
+      <Name>DriverName</Name>
+      <Type>0</Type>
+      <Size>20</Size>
+      <Description>Driver Name</Description>
+      <EditSize>20</EditSize>
+      <Mandatory>N</Mandatory>
+      <Created>N</Created>
+      <EditType> </EditType>
+    </TableFields>
+    <TableFields>
+      <FieldID>3</FieldID>
+      <TableName>OINV</TableName>
+      <Name>VehicleNo</Name>
+      <Type>0</Type>
+      <Size>15</Size>
+      <Description>Vehicle Number</Description>
+      <EditSize>15</EditSize>
+      <Mandatory>N</Mandatory>
+      <Created>N</Created>
+      <EditType> </EditType>
+    </TableFields>
+    <TableFields>
+      <FieldID>4</FieldID>
+      <TableName>OINV</TableName>
+      <Name>MtceOrder</Name>
+      <Type>0</Type>
+      <Size>30</Size>
+      <Description>Maintenance Order</Description>
+      <EditSize>30</EditSize>
+      <LinkedTable>OWA_MORHDR</LinkedTable>
+      <Mandatory>N</Mandatory>
+      <Created>N</Created>
+      <EditType> </EditType>
+    </TableFields>
+  </usertable>
+  <usertable>
+    <TableName>ORSC</TableName>
+    <TableDescription>ORSC</TableDescription>
+    <Tabletype>0</Tabletype>
+    <Secondary>-1</Secondary>
+    <Created>Y</Created>
+    <UseSequence>0</UseSequence>
+    <TableFields>
+      <FieldID>0</FieldID>
+      <TableName>ORSC</TableName>
+      <Name>TOutPut</Name>
+      <Type>4</Type>
+      <Size>16</Size>
+      <Description>Theoretical Output</Description>
+      <DefaultValue />
+      <EditSize>16</EditSize>
+      <LinkedTable />
+      <Mandatory>N</Mandatory>
+      <Created>N</Created>
+      <EditType>Q</EditType>
+    </TableFields>
+    <TableFields>
+      <FieldID>1</FieldID>
+      <TableName>ORSC</TableName>
+      <Name>PrcCode</Name>
+      <Type>0</Type>
+      <Size>20</Size>
+      <Description>Cost Centre</Description>
+      <EditSize>20</EditSize>
+      <Mandatory>N</Mandatory>
+      <Created>N</Created>
+      <EditType> </EditType>
+    </TableFields>
+  </usertable>
+  <usertable>
     <TableName>OWA_MORBREAKDOWN</TableName>
     <TableDescription>Plant Mtce- Machine Breakdown</TableDescription>
     <Tabletype>3</Tabletype>
     <Secondary>1</Secondary>
     <Created>N</Created>
     <UseSequence>0</UseSequence>
-    <TableFields>
-      <FieldID>0</FieldID>
+    <UserObjects>
+      <CanCancel>Y</CanCancel>
+      <CanClose>Y</CanClose>
+      <CanCreateDefaultForm>N</CanCreateDefaultForm>
+      <CanDelete>Y</CanDelete>
+      <CanFind>Y</CanFind>
+      <CanLog>N</CanLog>
+      <LogTableName />
+      <CanYearTransfer>N</CanYearTransfer>
+      <ManageSeries>N</ManageSeries>
+      <Code>OWAPMBRK</Code>
+      <Name>PMBreakDowns</Name>
+      <ObjectType>3</ObjectType>
       <TableName>OWA_MORBREAKDOWN</TableName>
-      <Name>PdOrder</Name>
-      <Type>2</Type>
-      <Size>11</Size>
-      <Description>Production Order #</Description>
-      <EditSize>10</EditSize>
-      <Mandatory>N</Mandatory>
       <Created>N</Created>
-      <EditType> </EditType>
-    </TableFields>
+      <UseSequence>0</UseSequence>
+    </UserObjects>
     <TableFields>
       <FieldID>1</FieldID>
       <TableName>OWA_MORBREAKDOWN</TableName>
@@ -49,10 +174,10 @@
       <Type>3</Type>
       <Size>8</Size>
       <Description>Start Date</Description>
+      <DefaultValue />
       <EditSize>8</EditSize>
       <Mandatory>N</Mandatory>
       <Created>N</Created>
-      <EditType> </EditType>
     </TableFields>
     <TableFields>
       <FieldID>4</FieldID>
@@ -75,6 +200,127 @@
       <Description>Remarks</Description>
       <EditSize>100</EditSize>
       <Mandatory>N</Mandatory>
+      <Created>N</Created>
+      <EditType> </EditType>
+    </TableFields>
+    <TableFields>
+      <FieldID>6</FieldID>
+      <TableName>OWA_MORBREAKDOWN</TableName>
+      <Name>Time</Name>
+      <Type>2</Type>
+      <Size>6</Size>
+      <Description>Time of Breakdown</Description>
+      <EditSize>6</EditSize>
+      <Mandatory>N</Mandatory>
+      <Created>N</Created>
+      <EditType>T</EditType>
+    </TableFields>
+    <TableFields>
+      <FieldID>7</FieldID>
+      <TableName>OWA_MORBREAKDOWN</TableName>
+      <Name>ItemName</Name>
+      <Type>0</Type>
+      <Size>100</Size>
+      <Description>Item Name</Description>
+      <EditSize>100</EditSize>
+      <Mandatory>N</Mandatory>
+      <Created>N</Created>
+      <EditType> </EditType>
+    </TableFields>
+    <TableFields>
+      <FieldID>8</FieldID>
+      <TableName>OWA_MORBREAKDOWN</TableName>
+      <Name>EmpName</Name>
+      <Type>0</Type>
+      <Size>100</Size>
+      <Description>Operator Name</Description>
+      <EditSize>100</EditSize>
+      <Mandatory>N</Mandatory>
+      <Created>N</Created>
+      <EditType> </EditType>
+    </TableFields>
+    <TableFields>
+      <FieldID>9</FieldID>
+      <TableName>OWA_MORBREAKDOWN</TableName>
+      <Name>ReportedBy</Name>
+      <Type>0</Type>
+      <Size>100</Size>
+      <Description>Reported By</Description>
+      <EditSize>100</EditSize>
+      <Mandatory>N</Mandatory>
+      <Created>N</Created>
+      <EditType> </EditType>
+    </TableFields>
+    <TableFields>
+      <FieldID>10</FieldID>
+      <TableName>OWA_MORBREAKDOWN</TableName>
+      <Name>OrderNum</Name>
+      <Type>0</Type>
+      <Size>10</Size>
+      <Description>Order No.</Description>
+      <EditSize>10</EditSize>
+      <Mandatory>N</Mandatory>
+      <Created>N</Created>
+      <EditType> </EditType>
+    </TableFields>
+  </usertable>
+  <usertable>
+    <TableName>OWA_MORCONFIG</TableName>
+    <TableDescription>Maintenance Configuration</TableDescription>
+    <Tabletype>1</Tabletype>
+    <Secondary>1</Secondary>
+    <Created>N</Created>
+    <UseSequence>0</UseSequence>
+    <UserObjects>
+      <CanCancel>N</CanCancel>
+      <CanClose>N</CanClose>
+      <CanCreateDefaultForm>Y</CanCreateDefaultForm>
+      <CanDelete>Y</CanDelete>
+      <CanFind>N</CanFind>
+      <CanLog>N</CanLog>
+      <LogTableName />
+      <CanYearTransfer>N</CanYearTransfer>
+      <ManageSeries>N</ManageSeries>
+      <Code>OWAMORCONFIG</Code>
+      <Name>MtceConfig</Name>
+      <ObjectType>1</ObjectType>
+      <TableName>OWA_MORCONFIG</TableName>
+      <Created>N</Created>
+      <UseSequence>0</UseSequence>
+    </UserObjects>
+    <TableFields>
+      <FieldID>0</FieldID>
+      <TableName>OWA_MORCONFIG</TableName>
+      <Name>MtceWH</Name>
+      <Type>0</Type>
+      <Size>20</Size>
+      <Description>Maintenance Warehouse</Description>
+      <EditSize>20</EditSize>
+      <Mandatory>Y</Mandatory>
+      <Created>N</Created>
+      <EditType> </EditType>
+    </TableFields>
+    <TableFields>
+      <FieldID>1</FieldID>
+      <TableName>OWA_MORCONFIG</TableName>
+      <Name>SparesWH</Name>
+      <Type>0</Type>
+      <Size>20</Size>
+      <Description>Spares Warehouse</Description>
+      <EditSize>20</EditSize>
+      <Mandatory>Y</Mandatory>
+      <Created>N</Created>
+      <EditType> </EditType>
+    </TableFields>
+    <TableFields>
+      <FieldID>2</FieldID>
+      <TableName>OWA_MORCONFIG</TableName>
+      <Name>MtceGL</Name>
+      <Type>0</Type>
+      <Size>20</Size>
+      <Description>GL Code for Goods Issue</Description>
+      <EditSize>20</EditSize>
+      <Mandatory>Y</Mandatory>
       <Created>N</Created>
       <EditType> </EditType>
     </TableFields>
@@ -202,15 +448,15 @@
       <CanLog>N</CanLog>
       <LogTableName />
       <CanYearTransfer>N</CanYearTransfer>
-      <ManageSeries>Y</ManageSeries>
-      <Code>PMtceOrd</Code>
-      <Name>Plant Maintenance Order</Name>
+      <ManageSeries>N</ManageSeries>
+      <Code>OWAPMOrder</Code>
+      <Name>MaintenanceOrder</Name>
       <ObjectType>3</ObjectType>
       <TableName>OWA_MORHDR</TableName>
       <Created>N</Created>
       <UseSequence>0</UseSequence>
       <UserObjectsChild>
-        <Code>PMtceOrd</Code>
+        <Code>OWAPMOrder</Code>
         <TableName>OWA_MORDET</TableName>
         <LogName />
         <SonName>OWA_MORDET</SonName>
@@ -223,31 +469,38 @@
       <Type>0</Type>
       <Size>10</Size>
       <Description>Status</Description>
-      <DefaultValue>Opened</DefaultValue>
+      <DefaultValue>N</DefaultValue>
       <EditSize>10</EditSize>
-      <Mandatory>N</Mandatory>
+      <Mandatory>Y</Mandatory>
       <Created>N</Created>
       <EditType> </EditType>
       <ValidValues>
         <TableName>OWA_MORHDR</TableName>
         <FieldID>0</FieldID>
         <IndexID>0</IndexID>
-        <Value>Closed</Value>
-        <Description>Closed</Description>
+        <Value>N</Value>
+        <Description>New</Description>
       </ValidValues>
       <ValidValues>
         <TableName>OWA_MORHDR</TableName>
         <FieldID>0</FieldID>
         <IndexID>1</IndexID>
-        <Value>Opened</Value>
-        <Description>Opened</Description>
+        <Value>I</Value>
+        <Description>In Process</Description>
       </ValidValues>
       <ValidValues>
         <TableName>OWA_MORHDR</TableName>
         <FieldID>0</FieldID>
         <IndexID>2</IndexID>
-        <Value>Pending</Value>
-        <Description>Pending</Description>
+        <Value>L</Value>
+        <Description>Cancelled</Description>
+      </ValidValues>
+      <ValidValues>
+        <TableName>OWA_MORHDR</TableName>
+        <FieldID>0</FieldID>
+        <IndexID>3</IndexID>
+        <Value>C</Value>
+        <Description>Closed</Description>
       </ValidValues>
     </TableFields>
     <TableFields>
@@ -257,30 +510,30 @@
       <Type>0</Type>
       <Size>10</Size>
       <Description>Priority</Description>
-      <DefaultValue>Low</DefaultValue>
+      <DefaultValue>L</DefaultValue>
       <EditSize>10</EditSize>
-      <Mandatory>N</Mandatory>
+      <Mandatory>Y</Mandatory>
       <Created>N</Created>
       <EditType> </EditType>
       <ValidValues>
         <TableName>OWA_MORHDR</TableName>
         <FieldID>1</FieldID>
         <IndexID>0</IndexID>
-        <Value>Low</Value>
+        <Value>L</Value>
         <Description>Low</Description>
       </ValidValues>
       <ValidValues>
         <TableName>OWA_MORHDR</TableName>
         <FieldID>1</FieldID>
         <IndexID>1</IndexID>
-        <Value>Medium</Value>
+        <Value>M</Value>
         <Description>Medium</Description>
       </ValidValues>
       <ValidValues>
         <TableName>OWA_MORHDR</TableName>
         <FieldID>1</FieldID>
         <IndexID>2</IndexID>
-        <Value>High</Value>
+        <Value>H</Value>
         <Description>High</Description>
       </ValidValues>
     </TableFields>
@@ -291,10 +544,10 @@
       <Type>3</Type>
       <Size>8</Size>
       <Description>Created On</Description>
+      <DefaultValue />
       <EditSize>8</EditSize>
       <Mandatory>N</Mandatory>
       <Created>N</Created>
-      <EditType> </EditType>
     </TableFields>
     <TableFields>
       <FieldID>3</FieldID>
@@ -303,10 +556,10 @@
       <Type>3</Type>
       <Size>8</Size>
       <Description>Closed On</Description>
+      <DefaultValue />
       <EditSize>8</EditSize>
       <Mandatory>N</Mandatory>
       <Created>N</Created>
-      <EditType> </EditType>
     </TableFields>
     <TableFields>
       <FieldID>4</FieldID>
@@ -315,10 +568,10 @@
       <Type>3</Type>
       <Size>8</Size>
       <Description>End Date</Description>
+      <DefaultValue />
       <EditSize>8</EditSize>
       <Mandatory>N</Mandatory>
       <Created>N</Created>
-      <EditType> </EditType>
     </TableFields>
     <TableFields>
       <FieldID>5</FieldID>
@@ -436,6 +689,126 @@
       <Size>100</Size>
       <Description>Remarks</Description>
       <EditSize>100</EditSize>
+      <Mandatory>N</Mandatory>
+      <Created>N</Created>
+      <EditType> </EditType>
+    </TableFields>
+    <TableFields>
+      <FieldID>15</FieldID>
+      <TableName>OWA_MORHDR</TableName>
+      <Name>OrderType</Name>
+      <Type>0</Type>
+      <Size>10</Size>
+      <Description>Order Type</Description>
+      <DefaultValue>R</DefaultValue>
+      <EditSize>10</EditSize>
+      <Mandatory>Y</Mandatory>
+      <Created>N</Created>
+      <EditType> </EditType>
+      <ValidValues>
+        <TableName>OWA_MORHDR</TableName>
+        <FieldID>15</FieldID>
+        <IndexID>0</IndexID>
+        <Value>R</Value>
+        <Description>Routine</Description>
+      </ValidValues>
+      <ValidValues>
+        <TableName>OWA_MORHDR</TableName>
+        <FieldID>15</FieldID>
+        <IndexID>1</IndexID>
+        <Value>B</Value>
+        <Description>Breakdown</Description>
+      </ValidValues>
+      <ValidValues>
+        <TableName>OWA_MORHDR</TableName>
+        <FieldID>15</FieldID>
+        <IndexID>2</IndexID>
+        <Value>P</Value>
+        <Description>Preventive</Description>
+      </ValidValues>
+    </TableFields>
+    <TableFields>
+      <FieldID>16</FieldID>
+      <TableName>OWA_MORHDR</TableName>
+      <Name>PrcCode</Name>
+      <Type>0</Type>
+      <Size>20</Size>
+      <Description>Cost Centre</Description>
+      <EditSize>20</EditSize>
+      <Mandatory>N</Mandatory>
+      <Created>N</Created>
+      <EditType> </EditType>
+    </TableFields>
+    <TableFields>
+      <FieldID>17</FieldID>
+      <TableName>OWA_MORHDR</TableName>
+      <Name>BrkDown</Name>
+      <Type>0</Type>
+      <Size>10</Size>
+      <Description>Break Down</Description>
+      <EditSize>10</EditSize>
+      <Mandatory>N</Mandatory>
+      <Created>N</Created>
+      <EditType> </EditType>
+    </TableFields>
+  </usertable>
+  <usertable>
+    <TableName>OWA_MORORGTYPES</TableName>
+    <TableDescription>Maintenance Origin Types</TableDescription>
+    <Tabletype>1</Tabletype>
+    <Secondary>1</Secondary>
+    <Created>N</Created>
+    <UseSequence>0</UseSequence>
+    <UserObjects>
+      <CanCancel>N</CanCancel>
+      <CanClose>N</CanClose>
+      <CanCreateDefaultForm>Y</CanCreateDefaultForm>
+      <CanDelete>Y</CanDelete>
+      <CanFind>N</CanFind>
+      <CanLog>N</CanLog>
+      <LogTableName />
+      <CanYearTransfer>N</CanYearTransfer>
+      <ManageSeries>N</ManageSeries>
+      <Code>OWAMORORG</Code>
+      <Name>OriginTypes</Name>
+      <ObjectType>1</ObjectType>
+      <TableName>OWA_MORORGTYPES</TableName>
+      <Created>N</Created>
+      <UseSequence>0</UseSequence>
+    </UserObjects>
+  </usertable>
+  <usertable>
+    <TableName>OWA_MORPROBLEMTYPES</TableName>
+    <TableDescription>Maintenance Problem Types</TableDescription>
+    <Tabletype>1</Tabletype>
+    <Secondary>1</Secondary>
+    <Created>N</Created>
+    <UseSequence>0</UseSequence>
+    <UserObjects>
+      <CanCancel>N</CanCancel>
+      <CanClose>N</CanClose>
+      <CanCreateDefaultForm>Y</CanCreateDefaultForm>
+      <CanDelete>Y</CanDelete>
+      <CanFind>Y</CanFind>
+      <CanLog>N</CanLog>
+      <LogTableName />
+      <CanYearTransfer>N</CanYearTransfer>
+      <ManageSeries>N</ManageSeries>
+      <Code>OWAMORPRTYPEs</Code>
+      <Name>ProblemTypes</Name>
+      <ObjectType>1</ObjectType>
+      <TableName>OWA_MORPROBLEMTYPES</TableName>
+      <Created>N</Created>
+      <UseSequence>0</UseSequence>
+    </UserObjects>
+    <TableFields>
+      <FieldID>0</FieldID>
+      <TableName>OWA_MORPROBLEMTYPES</TableName>
+      <Name>Test</Name>
+      <Type>0</Type>
+      <Size>10</Size>
+      <Description>Test</Description>
+      <EditSize>10</EditSize>
       <Mandatory>N</Mandatory>
       <Created>N</Created>
       <EditType> </EditType>
