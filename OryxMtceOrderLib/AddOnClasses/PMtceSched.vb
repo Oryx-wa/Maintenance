@@ -87,19 +87,19 @@ Public Class PMtceSched
                 Select Case pVal.ColUID
                     Case "Col_0"
 
-                        m_DBDataSource1 = m_Form.DataSources.DBDataSources.Item("@OWA_COUNTERS")
-                        m_DBDataSource2 = m_Form.DataSources.DBDataSources.Item("@OWA_MACCOUNTERS")
+                        m_DBDataSource3 = m_Form.DataSources.DBDataSources.Item("@OWA_COUNTERS")
+                        m_DBDataSource4 = m_Form.DataSources.DBDataSources.Item("@OWA_MACCOUNTERS")
 
-                        grdSched.FlushToDataSource()
+                        grdcoutr.FlushToDataSource()
 
                         If getOffset(Val, "Code", m_DBDataSource3) Then
-                            Dim a = m_DBDataSource3.GetValue("U_actType", 0)
-                            m_DBDataSource4.SetValue("U_ctype", pVal.Row - 1, m_DBDataSource3.GetValue("U_ctype", 0))
-                            m_DBDataSource4.SetValue("U_cUnit", pVal.Row - 1, m_DBDataSource3.GetValue("U_cUnit", 0))
-                            m_DBDataSource4.SetValue("U_cValue", pVal.Row - 1, m_DBDataSource3.GetValue("U_cValue", 0))
+                            Dim a = m_DBDataSource3.GetValue("U_ctype", 0)
+                            m_DBDataSource4.SetValue("U_ctype", pVal.Row - 1, m_DBDataSource3.GetValue("U_ctype", 0).Trim)
+                            m_DBDataSource4.SetValue("U_cUnit", pVal.Row - 1, m_DBDataSource3.GetValue("U_cUnit", 0).Trim)
+                            m_DBDataSource4.SetValue("U_cValue", pVal.Row - 1, m_DBDataSource3.GetValue("U_cValue", 0).Trim)
                         End If
 
-                        grdSched.LoadFromDataSource()
+                        grdcoutr.LoadFromDataSource()
 
                 End Select
         End Select
