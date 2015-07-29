@@ -40,3 +40,15 @@ C:\Programs\Maintenance\OryxMtceOrderSQL\obj\Debug\GenerateResource.write.1.tlog
 C:\Programs\Maintenance\OryxMtceOrderSQL\obj\Debug\OryxMtceOrderSQL.dll
 C:\Programs\Maintenance\OryxMtceOrderSQL\obj\Debug\OryxMtceOrderSQL.xml
 C:\Programs\Maintenance\OryxMtceOrderSQL\obj\Debug\OryxMtceOrderSQL.pdb
+C:\Users\Administrator\Documents\GitHub\Maintenance\OryxMtceOrderSQL\obj\Debug\OryxMtceOrderSQL.vbprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\Maintenance\OryxMtceOrderSQL\obj\Debug\OWA.SBO.OryxMtceOrderSQL.Resources.resources
+C:\Users\Administrator\Documents\GitHub\Maintenance\OryxMtceOrderSQL\obj\Debug\OryxMtceOrderSQL.vbproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\GitHub\Maintenance\OryxMtceOrderSQL\obj\Debug\OryxMtceOrderSQL.dll
+C:\Users\Administrator\Documents\GitHub\Maintenance\OryxMtceOrderSQL\obj\Debug\OryxMtceOrderSQL.xml
+C:\Users\Administrator\Documents\GitHub\Maintenance\OryxMtceOrderSQL\obj\Debug\OryxMtceOrderSQL.pdb
+C:\Users\Administrator\Documents\GitHub\Maintenance\OryxMtceOrderSQL\bin\Debug\OryxMtceOrderSQL.dll
+C:\Users\Administrator\Documents\GitHub\Maintenance\OryxMtceOrderSQL\bin\Debug\OryxMtceOrderSQL.pdb
+C:\Users\Administrator\Documents\GitHub\Maintenance\OryxMtceOrderSQL\bin\Debug\OryxMtceOrderSQL.xml
+C:\Users\Administrator\Documents\GitHub\Maintenance\OryxMtceOrderSQL\bin\Debug\SboAddOnBase.dll
+C:\Users\Administrator\Documents\GitHub\Maintenance\OryxMtceOrderSQL\bin\Debug\SboAddOnBase.pdb
+C:\Users\Administrator\Documents\GitHub\Maintenance\OryxMtceOrderSQL\bin\Debug\SboAddOnBase.xml

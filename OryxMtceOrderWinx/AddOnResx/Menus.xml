@@ -19,13 +19,11 @@
               </Menus>
             </Menu>-->
             <Menu Checked="0" Enabled="1" FatherUID="OWA_MOR" String="Configuration" Type="1"  position="1" UniqueID="m_mtceconfig"/>
-            <Menu Checked="0" Enabled="1" FatherUID="OWA_MOR" String="Problem Types" Type="1"  position="1" UniqueID="m_prtypes"/>
-            <Menu Checked="0" Enabled="1" FatherUID="OWA_MOR" String="Origin Types" Type="1" position="2" UniqueID="m_orgtypes"/>
+            <Menu Checked="0" Enabled="1" FatherUID="OWA_MOR" String="Activity Types" Type="1" position="2" UniqueID="m_acttypes"/>
+            <Menu Checked="0" Enabled="1" FatherUID="OWA_MOR" String="Counters" Type="1" position="2" UniqueID="m_counters"/>
             <Menu Checked="0" Enabled="1" FatherUID="OWA_MOR" String="Machine Breakdowns" Type="1"  position="3" UniqueID="m_brkdwn"/>
             <Menu Checked="0" Enabled="1" FatherUID="OWA_MOR" String="Maintenance Order" Type="1" position="4" UniqueID="m_mtceord"/>
-
-            
-
+            <Menu Checked="0" Enabled="1" FatherUID="OWA_MOR" String="Maintenance Schedule" Type="1" position="4" UniqueID="m_scedul"/>
           </action>
 				</Menus>
         

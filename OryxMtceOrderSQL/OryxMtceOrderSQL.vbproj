@@ -183,9 +183,14 @@
       <Name>SboAddOnBaseNew</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Query\MtceScheduleData.txt" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Query\MtceTransactions.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Query\MtceCountersData.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

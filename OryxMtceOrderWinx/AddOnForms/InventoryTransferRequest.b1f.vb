@@ -24,6 +24,7 @@ Namespace OWA.SBO.OryxMtceOrderWinx
             AddHandler LoadAfter, AddressOf Me.Form_LoadAfter
 
         End Sub
+
         Private WithEvents EditText0 As SAPbouiCOM.EditText
 
         Private Sub OnCustomInitialize()
@@ -32,7 +33,7 @@ Namespace OWA.SBO.OryxMtceOrderWinx
         End Sub
         Private WithEvents StaticText0 As SAPbouiCOM.StaticText
 
-        Private Sub Form_LoadAfter(pVal As SAPbouiCOM.SBOItemEventArg)
+        Private Sub Form_LoadAfter(ByVal pVal As SAPbouiCOM.SBOItemEventArg)
             If InvReqFormParam.MaintenanceId <> 0 Then
                 EditText0.Value = InvReqFormParam.MaintenanceId
                 InvReqFormParam.MaintenanceId = 0
@@ -45,7 +46,7 @@ Namespace OWA.SBO.OryxMtceOrderWinx
 
         End Sub
 
-        Private Sub InventoryTransferRequest_UnloadAfter(pVal As SAPbouiCOM.SBOItemEventArg) Handles Me.UnloadAfter
+        Private Sub InventoryTransferRequest_UnloadAfter(ByVal pVal As SAPbouiCOM.SBOItemEventArg) Handles Me.UnloadAfter
             If ReleaseForm Then InvReqFormParam.oPM.FormRelease(False)
 
         End Sub

@@ -2,7 +2,10 @@
 <Oryx>
   <Forms Name="PMtceOrd_b1f" MenuUID="m_mtceord"   PermID="OWA_MOR001" PermCategory="OWA_MOR" UDO="N"/>
   <Forms Name="MachBrkDown_b1f" MenuUID="m_brkdwn" PermID="OWA_MOR002" PermCategory="OWA_MOR" UDO="N"/>
+  <Forms Name="PMtceSchedule" MenuUID="m_scedul" PermID="OWA_MOR002" PermCategory="OWA_MOR" UDO="N"/>
   <Forms Name="OWAMORPRTYPEs" MenuUID="m_prtypes" PermID="OWA_MOR002" PermCategory="OWA_MOR" UDO="Y"/>
   <Forms Name="OWAMORORG" MenuUID="m_orgtypes" PermID="OWA_MOR002" PermCategory="OWA_MOR" UDO="Y"/>
   <Forms Name="OWAMORCONFIG" MenuUID="m_mtceconfig" PermID="OWA_MOR002" PermCategory="OWA_MOR" UDO="Y"/>
+  <Forms Name="OWAACTIVITY" MenuUID="m_acttypes" PermID="OWA_MOR002" PermCategory="OWA_MOR" UDO="Y"/>
+  <Forms Name="OWACOUNTERS" MenuUID="m_counters" PermID="OWA_MOR002" PermCategory="OWA_MOR" UDO="Y"/>
 </Oryx>

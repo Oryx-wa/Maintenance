@@ -126,6 +126,9 @@
     <Compile Include="AddOnForms\PMtceOrd.b1f.vb">
       <DependentUpon>PMtceOrd.b1f</DependentUpon>
     </Compile>
+    <Compile Include="AddOnForms\PMtceSchedule.b1f.vb">
+      <DependentUpon>PMtceSchedule.b1f</DependentUpon>
+    </Compile>
     <Compile Include="AddOnForms\prtypes.b1f.vb">
       <DependentUpon>prtypes.b1f</DependentUpon>
     </Compile>
@@ -187,6 +190,9 @@
       <FormCategory>UserForm</FormCategory>
     </None>
     <None Include="AddOnForms\PMtceOrd.b1f">
+      <FormCategory>UserForm</FormCategory>
+    </None>
+    <None Include="AddOnForms\PMtceSchedule.b1f">
       <FormCategory>UserForm</FormCategory>
     </None>
     <None Include="AddOnForms\prtypes.b1f">

@@ -27,6 +27,8 @@ Public Class PMtceOrd
     Private DocEntry As Integer = 0
     Private cboStatus As SAPbouiCOM.ComboBox, txtClose As SAPbouiCOM.EditText
     Private grdTrans As SAPbouiCOM.Grid
+    Private grdMtnSch As SAPbouiCOM.Grid
+    Private grdCountr As SAPbouiCOM.Grid
     Private editCol As SAPbouiCOM.GridColumn
     Public oForm As SAPbouiCOM.Form, strExclude As String
     Private UserDB As SAPbouiCOM.UserDataSource, UserDB1 As SAPbouiCOM.UserDataSource
@@ -47,6 +49,8 @@ Public Class PMtceOrd
         cboCreate = CType(Me.m_Form.Items.Item("cboCreate").Specific, SAPbouiCOM.ButtonCombo)
         cboStatus = CType(Me.m_Form.Items.Item("cboStatus").Specific, SAPbouiCOM.ComboBox)
         grdTrans = CType(Me.m_Form.Items.Item("grdTrans").Specific, SAPbouiCOM.Grid)
+        grdMtnSch = CType(Me.m_Form.Items.Item("grdMtnSch").Specific, SAPbouiCOM.Grid)
+        grdCountr = CType(Me.m_Form.Items.Item("grdCountr").Specific, SAPbouiCOM.Grid)
         txtPrc = CType(Me.m_Form.Items.Item("txtPrc").Specific, SAPbouiCOM.EditText)
         txtClose = CType(Me.m_Form.Items.Item("txtClose").Specific, SAPbouiCOM.EditText)
         txtOprName = CType(Me.m_Form.Items.Item("txtOprName").Specific, SAPbouiCOM.EditText)
@@ -213,6 +217,11 @@ Public Class PMtceOrd
             End If
             m_Form.Freeze(False)
 
+            GetMaintenanceScheduleData(DocEntry.ToString.Trim)
+            FormatMaintenanceGrid()
+
+            GetCountersData(DocEntry.ToString.Trim)
+            FormatCountersGrid()
 
         Catch ex As Exception
             m_SboApplication.StatusBar.SetText(ex.ToString, SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Error)
@@ -255,8 +264,6 @@ Public Class PMtceOrd
         Next
 
         grdTrans.AutoResizeColumns()
-
-
 
     End Sub
     Public Overrides Sub OnItemPressedAfter(ByVal sboObject As Object, ByVal pVal As SAPbouiCOM.SBOItemEventArg)
@@ -396,9 +403,6 @@ Public Class PMtceOrd
 
     End Sub
 
-   
-
-
     Protected Overrides Sub OnMatrixAddRow()
         MyBase.OnMatrixAddRow()
         AddRowToMatrix(matOrdDet)
@@ -433,4 +437,86 @@ Public Class PMtceOrd
             Return False
         End Try
     End Function
+
+    Private Sub FormatMaintenanceGrid()
+        'MyBase.FormatGrid()
+
+        grdMtnSch.Columns.Item("Category").TitleObject.Caption = "Trans / Req"
+        grdMtnSch.Columns.Item("nType").TitleObject.Caption = "Trans Type"
+        grdMtnSch.Columns.Item("DocNum").TitleObject.Caption = "Doc. Num"
+        grdMtnSch.Columns.Item("DocDate").TitleObject.Caption = "Doc. Date"
+        grdMtnSch.Columns.Item("ItemCode").TitleObject.Caption = "Item / GL"
+        grdMtnSch.Columns.Item("ItemName").TitleObject.Caption = "Description"
+        grdMtnSch.Columns.Item("Value").TitleObject.Caption = "Value"
+
+        grdMtnSch.Columns.Item("DocType").Visible = False
+        grdMtnSch.Columns.Item("objType").Visible = False
+        grdMtnSch.Columns.Item("Category").Visible = False
+        grdMtnSch.Columns.Item("mType").Visible = False
+
+
+        ' editCol = grdTrans.Columns.Item("DocNum")
+        ' editCol.LinkedObjectType = "1250000001"
+
+        ' editCol = grdTrans.Columns.Item("ItemCode")
+        ' editCol.LinkedObjectType = "4"
+
+
+
+        'grdTrans.CollapseLevel = 1
+
+        Dim i As Integer
+
+        For i = 0 To grdMtnSch.Columns.Count - 1
+            grdMtnSch.Columns.Item(i).Editable = False
+        Next
+
+        grdMtnSch.AutoResizeColumns()
+
+    End Sub
+
+    Private Sub GetMaintenanceScheduleData(ByVal machineId As String)
+        m_DataTable0 = ExecuteSQLDT("MtceScheduleData", machineId)
+        grdMtnSch.DataTable = m_DataTable0
+    End Sub
+
+    Private Sub GetCountersData(ByVal machineId As String)
+        m_DataTable0 = ExecuteSQLDT("MtceCountersData", machineId)
+        grdCountr.DataTable = m_DataTable0
+    End Sub
+
+    Private Sub FormatCountersGrid()
+        grdCountr.Columns.Item("Category").TitleObject.Caption = "Trans / Req"
+        grdCountr.Columns.Item("nType").TitleObject.Caption = "Trans Type"
+        grdCountr.Columns.Item("DocNum").TitleObject.Caption = "Doc. Num"
+        grdCountr.Columns.Item("DocDate").TitleObject.Caption = "Doc. Date"
+        grdCountr.Columns.Item("ItemCode").TitleObject.Caption = "Item / GL"
+        grdCountr.Columns.Item("ItemName").TitleObject.Caption = "Description"
+        grdCountr.Columns.Item("Value").TitleObject.Caption = "Value"
+
+        grdCountr.Columns.Item("DocType").Visible = False
+        grdCountr.Columns.Item("objType").Visible = False
+        grdCountr.Columns.Item("Category").Visible = False
+        grdCountr.Columns.Item("mType").Visible = False
+
+
+        ' editCol = grdTrans.Columns.Item("DocNum")
+        ' editCol.LinkedObjectType = "1250000001"
+
+        ' editCol = grdTrans.Columns.Item("ItemCode")
+        ' editCol.LinkedObjectType = "4"
+
+
+
+        'grdTrans.CollapseLevel = 1
+
+        Dim i As Integer
+
+        For i = 0 To grdCountr.Columns.Count - 1
+            grdCountr.Columns.Item(i).Editable = False
+        Next
+
+        grdCountr.AutoResizeColumns()
+    End Sub
+
 End Class

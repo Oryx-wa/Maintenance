@@ -1,0 +1,43 @@
+﻿Declare @tmp Table (Category varchar(15), nType varchar(20), DocNum int, DocDate Date, ItemCode varchar(20), ItemName varchar(100), 
+					Quantity numeric(19,6), Value numeric(19,6), DocType varchar(5), objType  varchar(20), mType varchar(10))
+
+DECLARE @p1 int;
+ 
+Set @p1 = OWAPARAM1 ; --1;
+
+-- Purchase Orders 
+Insert @tmp (nType, DocNum, DocDate, ItemCode, ItemName, Quantity, Value, DocType, Category, objType, mType)
+-- Purchase Orders Items
+Select 'PO', a.DocEntry, a.DocDate, b.ItemCode,b.Dscription,b.Quantity,b.linetotal Value,a.DocType, 'Request' Category, a.objtype, '4'
+from OPOR a join POR1 b on a.DocEntry = b.DocEntry 
+Where a.U_MtceOrder = @p1 and a.DocType = 'I'
+Union All
+-- Purchase Orders Service
+Select 'PO', a.DocEntry, a.DocDate, b.AcctCode,b.Dscription,b.Quantity,b.linetotal Value, a.DocType, 'Request' Category, a.objtype, '1'
+from OPOR a join POR1 b on a.DocEntry = b.DocEntry 
+Where a.U_MtceOrder = @p1 and a.DocType = 'S'
+Union All
+-- Transfer Request 
+Select 'TR', a.DocEntry, a.DocDate, b.ItemCode,b.Dscription,b.Quantity,b.linetotal Value,a.DocType, 'Request' Category, a.objtype, '4'
+from OWTQ a join WTQ1 b on a.DocEntry = b.DocEntry 
+Where a.U_MtceOrder = 1
+Union All
+-- Goods Issue
+Select 'SI', a.DocEntry, a.DocDate, b.ItemCode,b.Dscription,b.Quantity,b.linetotal Value,a.DocType, 'Transaction' Category, a.objtype, '4'
+from  OIGE a join IGE1 b on a.DocEntry = b.DocEntry 
+Where a.U_MtceOrder = @p1
+Union All
+-- AP Invoices Services
+Select 'SI', a.DocEntry, a.DocDate, b.ItemCode,b.Dscription,b.Quantity,b.linetotal Value,a.DocType, 'Transaction' Category, a.objtype, '1'
+from  OPCH a join PCH1 b on a.DocEntry = b.DocEntry 
+Where a.U_MtceOrder = @p1 and a.DocType = 'S'
+
+Select * from @tmp
+
+
+
+
+
+
+
+

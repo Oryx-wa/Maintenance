@@ -54,6 +54,12 @@ Friend Class PMtceOrd_b1f
         Me.EditText3 = CType(Me.GetItem("txtMach").Specific, SAPbouiCOM.EditText)
         Me.LinkedButton0 = CType(Me.GetItem("Item_9").Specific, SAPbouiCOM.LinkedButton)
         Me.LinkedButton1 = CType(Me.GetItem("Item_10").Specific, SAPbouiCOM.LinkedButton)
+        Me.Grid1 = CType(Me.GetItem("grdMtnSch").Specific, SAPbouiCOM.Grid)
+        Me.Grid2 = CType(Me.GetItem("grdCountr").Specific, SAPbouiCOM.Grid)
+        Me.StaticText4 = CType(Me.GetItem("Item_12").Specific, SAPbouiCOM.StaticText)
+        Me.EditText5 = CType(Me.GetItem("txtCrTime").Specific, SAPbouiCOM.EditText)
+        Me.StaticText5 = CType(Me.GetItem("Item_14").Specific, SAPbouiCOM.StaticText)
+        Me.EditText6 = CType(Me.GetItem("txClTime").Specific, SAPbouiCOM.EditText)
         Me.OnCustomInitialize()
 
     End Sub
@@ -124,6 +130,12 @@ Friend Class PMtceOrd_b1f
     Private WithEvents EditText3 As SAPbouiCOM.EditText
     Private WithEvents LinkedButton0 As SAPbouiCOM.LinkedButton
     Private WithEvents LinkedButton1 As SAPbouiCOM.LinkedButton
+    Private WithEvents Grid1 As SAPbouiCOM.Grid
+    Private WithEvents Grid2 As SAPbouiCOM.Grid
+    Private WithEvents StaticText4 As SAPbouiCOM.StaticText
+    Private WithEvents EditText5 As SAPbouiCOM.EditText
+    Private WithEvents StaticText5 As SAPbouiCOM.StaticText
+    Private WithEvents EditText6 As SAPbouiCOM.EditText
 
 
     'Private Sub cboMach_ComboSelectAfter(sboObject As Object, pVal As SAPbouiCOM.SBOItemEventArg) Handles cboMach.ComboSelectAfter
