@@ -21,6 +21,7 @@ Public Class PMtceOrd
     Private colQty As SAPbouiCOM.Column
     Private colAmt As SAPbouiCOM.Column
     Private cboOrg As SAPbouiCOM.ComboBox
+    Private cboCstCtr As SAPbouiCOM.ComboBox
     Private cboProb As SAPbouiCOM.ComboBox
     Private cboTech, cboType As SAPbouiCOM.ComboBox
     Private cboCreate As SAPbouiCOM.ButtonCombo
@@ -30,6 +31,8 @@ Public Class PMtceOrd
     Private grdMtnSch As SAPbouiCOM.Grid
     Private grdCountr As SAPbouiCOM.Grid
     Private editCol As SAPbouiCOM.GridColumn
+    Private txClTime As SAPbouiCOM.EditText
+    Private txtCrTime As SAPbouiCOM.EditText
     Public oForm As SAPbouiCOM.Form, strExclude As String
     Private UserDB As SAPbouiCOM.UserDataSource, UserDB1 As SAPbouiCOM.UserDataSource
 
@@ -46,32 +49,36 @@ Public Class PMtceOrd
         cboProb = CType(Me.m_Form.Items.Item("cboProb").Specific, SAPbouiCOM.ComboBox)
         cboOrg = CType(Me.m_Form.Items.Item("cboOrg").Specific, SAPbouiCOM.ComboBox)
         cboTech = CType(Me.m_Form.Items.Item("cboTech").Specific, SAPbouiCOM.ComboBox)
-        cboCreate = CType(Me.m_Form.Items.Item("cboCreate").Specific, SAPbouiCOM.ButtonCombo)
+        cboCstCtr = CType(Me.m_Form.Items.Item("cboCstCtr").Specific, SAPbouiCOM.ComboBox)
+        ' cboCreate = CType(Me.m_Form.Items.Item("cboCreate").Specific, SAPbouiCOM.ButtonCombo)
         cboStatus = CType(Me.m_Form.Items.Item("cboStatus").Specific, SAPbouiCOM.ComboBox)
         grdTrans = CType(Me.m_Form.Items.Item("grdTrans").Specific, SAPbouiCOM.Grid)
-        grdMtnSch = CType(Me.m_Form.Items.Item("grdMtnSch").Specific, SAPbouiCOM.Grid)
-        grdCountr = CType(Me.m_Form.Items.Item("grdCountr").Specific, SAPbouiCOM.Grid)
-        txtPrc = CType(Me.m_Form.Items.Item("txtPrc").Specific, SAPbouiCOM.EditText)
+        'grdMtnSch = CType(Me.m_Form.Items.Item("grdMtnSch").Specific, SAPbouiCOM.Grid)
+        'grdCountr = CType(Me.m_Form.Items.Item("grdCountr").Specific, SAPbouiCOM.Grid)
+        'txtPrc = CType(Me.m_Form.Items.Item("txtPrc").Specific, SAPbouiCOM.EditText)
+        txtCrTime = CType(Me.m_Form.Items.Item("txtCrTime").Specific, SAPbouiCOM.EditText)
+        txClTime = CType(Me.m_Form.Items.Item("txClTime").Specific, SAPbouiCOM.EditText)
         txtClose = CType(Me.m_Form.Items.Item("txtClose").Specific, SAPbouiCOM.EditText)
         txtOprName = CType(Me.m_Form.Items.Item("txtOprName").Specific, SAPbouiCOM.EditText)
         cboType = CType(Me.m_Form.Items.Item("cboType").Specific, SAPbouiCOM.ComboBox)
 
         strExclude = "txtOprName,txtTime,txtDate"
         'Set Auto manage attribute to control behaviour
-        cboCreate.Item.SetAutoManagedAttribute(SAPbouiCOM.BoAutoManagedAttr.ama_Editable, 6, SAPbouiCOM.BoModeVisualBehavior.mvb_False)
-        cboStatus.Item.SetAutoManagedAttribute(SAPbouiCOM.BoAutoManagedAttr.ama_Editable, 6, SAPbouiCOM.BoModeVisualBehavior.mvb_False)
+        'cboCreate.Item.SetAutoManagedAttribute(SAPbouiCOM.BoAutoManagedAttr.ama_Editable, 6, SAPbouiCOM.BoModeVisualBehavior.mvb_False)
+        'cboStatus.Item.SetAutoManagedAttribute(SAPbouiCOM.BoAutoManagedAttr.ama_Editable, 6, SAPbouiCOM.BoModeVisualBehavior.mvb_False)
 
 
         'fillCombo("VisResCode", "ResName", "ORSC", cboMach.ValidValues, "ResType='M'")
-        'fillCombo("Code", "Name", "@OWA_MORPROBLEMTYPES", cboMach.ValidValues)
-        fillCombo("Code", "Name", "@OWA_MORORGTYPES", cboOrg.ValidValues)
         fillCombo("Code", "Name", "@OWA_MORPROBLEMTYPES", cboProb.ValidValues)
+        fillCombo("Code", "Name", "@OWA_MORORGTYPES", cboOrg.ValidValues)
+        fillCombo("CctCode", "CctName", "OCCT", cboCstCtr.ValidValues)
         fillCombo("empID", "LastName", "OHEM", cboTech.ValidValues, " empid in (Select empid from HEM6 WHERE roleID = -2)")
 
-        cboCreate.Item.AffectsFormMode = False
-        cboCreate.ValidValues.Add("1", "Stock Transfer Request")
-        cboCreate.ValidValues.Add("2", "Purchase Order")
-        cboCreate.ValidValues.Add("3", "Goods Issue")
+        'cboCreate.Item.AffectsFormMode = False
+        'cboCreate.ValidValues.Add("1", "Stock Transfer Request")
+        'cboCreate.ValidValues.Add("2", "Purchase Order")
+        'cboCreate.ValidValues.Add("3", "Goods Issue")
+
         'cboCreate.ValidValues.Add("4", "Stock Transfer")
 
 
@@ -94,7 +101,7 @@ Public Class PMtceOrd
         Select Case pVal.ItemUID
 
             Case "txtOprID"
-                'm_DBDataSource2.SetValue("U_operatorID", 0, Val)
+                m_DBDataSource2.SetValue("U_operatorID", 0, Val)
 
                 If getOffset(Val, "empID", m_DBDataSource0) Then
                     txtOprName.Value = m_DBDataSource0.GetValue("firstName", m_DBDataSource0.Offset).Trim & _
@@ -108,7 +115,7 @@ Public Class PMtceOrd
                 End If
             Case "txtMach"
                 If getOffset(Val, "ResCode", m_DBDataSource1) Then
-                    txtPrc.Value = m_DBDataSource1.GetValue("U_PrcCode", m_DBDataSource1.Offset)
+                    'txtPrc.Value = m_DBDataSource1.GetValue("U_PrcCode", m_DBDataSource1.Offset)
                 End If
                 'Case "matOrdDet"
                 '    Select Case pVal.ColUID
@@ -217,12 +224,6 @@ Public Class PMtceOrd
             End If
             m_Form.Freeze(False)
 
-            GetMaintenanceScheduleData(DocEntry.ToString.Trim)
-            FormatMaintenanceGrid()
-
-            GetCountersData(DocEntry.ToString.Trim)
-            FormatCountersGrid()
-
         Catch ex As Exception
             m_SboApplication.StatusBar.SetText(ex.ToString, SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Error)
             m_Form.Freeze(False)
@@ -326,27 +327,27 @@ Public Class PMtceOrd
 
         Select Case pVal.ItemUID
             
-            Case "cboCreate"
-                InvReqFormParam.MaintenanceId = DocEntry
-                InvReqFormParam.oPM = Me
+            'Case "cboCreate"
+            '    InvReqFormParam.MaintenanceId = DocEntry
+            '    InvReqFormParam.oPM = Me
 
-                Select Case cboCreate.Selected.Value
-                    Case "1"
+            '    Select Case cboCreate.Selected.Value
+            '        Case "1"
 
-                        m_SboApplication.ActivateMenuItem("3088")
-                        FormRelease(True)
-                        'oSysForm = m_SboApplication.OpenForm(SAPbouiCOM.BoFormObjectEnum.fo_StockTransfersRequest, "", "")
-                    Case "2" 'Purchase Order
-                        m_SboApplication.ActivateMenuItem("2305")
-                        FormRelease(True)
-                    Case "3" 'Goods Issue
-                        m_SboApplication.ActivateMenuItem("3079")
-                        FormRelease(True)
-                    Case "4" 'Purchase Request
-                        m_SboApplication.ActivateMenuItem("39724")
-                        FormRelease(True)
-                    
-                End Select
+            '            m_SboApplication.ActivateMenuItem("3088")
+            '            FormRelease(True)
+            '            'oSysForm = m_SboApplication.OpenForm(SAPbouiCOM.BoFormObjectEnum.fo_StockTransfersRequest, "", "")
+            '        Case "2" 'Purchase Order
+            '            m_SboApplication.ActivateMenuItem("2305")
+            '            FormRelease(True)
+            '        Case "3" 'Goods Issue
+            '            m_SboApplication.ActivateMenuItem("3079")
+            '            FormRelease(True)
+            '        Case "4" 'Purchase Request
+            '            m_SboApplication.ActivateMenuItem("39724")
+            '            FormRelease(True)
+
+            '    End Select
             Case "cboStatus"
                 Select Case cboStatus.Value.Trim
                     Case "I"
@@ -437,86 +438,5 @@ Public Class PMtceOrd
             Return False
         End Try
     End Function
-
-    Private Sub FormatMaintenanceGrid()
-        'MyBase.FormatGrid()
-
-        grdMtnSch.Columns.Item("Category").TitleObject.Caption = "Trans / Req"
-        grdMtnSch.Columns.Item("nType").TitleObject.Caption = "Trans Type"
-        grdMtnSch.Columns.Item("DocNum").TitleObject.Caption = "Doc. Num"
-        grdMtnSch.Columns.Item("DocDate").TitleObject.Caption = "Doc. Date"
-        grdMtnSch.Columns.Item("ItemCode").TitleObject.Caption = "Item / GL"
-        grdMtnSch.Columns.Item("ItemName").TitleObject.Caption = "Description"
-        grdMtnSch.Columns.Item("Value").TitleObject.Caption = "Value"
-
-        grdMtnSch.Columns.Item("DocType").Visible = False
-        grdMtnSch.Columns.Item("objType").Visible = False
-        grdMtnSch.Columns.Item("Category").Visible = False
-        grdMtnSch.Columns.Item("mType").Visible = False
-
-
-        ' editCol = grdTrans.Columns.Item("DocNum")
-        ' editCol.LinkedObjectType = "1250000001"
-
-        ' editCol = grdTrans.Columns.Item("ItemCode")
-        ' editCol.LinkedObjectType = "4"
-
-
-
-        'grdTrans.CollapseLevel = 1
-
-        Dim i As Integer
-
-        For i = 0 To grdMtnSch.Columns.Count - 1
-            grdMtnSch.Columns.Item(i).Editable = False
-        Next
-
-        grdMtnSch.AutoResizeColumns()
-
-    End Sub
-
-    Private Sub GetMaintenanceScheduleData(ByVal machineId As String)
-        m_DataTable0 = ExecuteSQLDT("MtceScheduleData", machineId)
-        grdMtnSch.DataTable = m_DataTable0
-    End Sub
-
-    Private Sub GetCountersData(ByVal machineId As String)
-        m_DataTable0 = ExecuteSQLDT("MtceCountersData", machineId)
-        grdCountr.DataTable = m_DataTable0
-    End Sub
-
-    Private Sub FormatCountersGrid()
-        grdCountr.Columns.Item("Category").TitleObject.Caption = "Trans / Req"
-        grdCountr.Columns.Item("nType").TitleObject.Caption = "Trans Type"
-        grdCountr.Columns.Item("DocNum").TitleObject.Caption = "Doc. Num"
-        grdCountr.Columns.Item("DocDate").TitleObject.Caption = "Doc. Date"
-        grdCountr.Columns.Item("ItemCode").TitleObject.Caption = "Item / GL"
-        grdCountr.Columns.Item("ItemName").TitleObject.Caption = "Description"
-        grdCountr.Columns.Item("Value").TitleObject.Caption = "Value"
-
-        grdCountr.Columns.Item("DocType").Visible = False
-        grdCountr.Columns.Item("objType").Visible = False
-        grdCountr.Columns.Item("Category").Visible = False
-        grdCountr.Columns.Item("mType").Visible = False
-
-
-        ' editCol = grdTrans.Columns.Item("DocNum")
-        ' editCol.LinkedObjectType = "1250000001"
-
-        ' editCol = grdTrans.Columns.Item("ItemCode")
-        ' editCol.LinkedObjectType = "4"
-
-
-
-        'grdTrans.CollapseLevel = 1
-
-        Dim i As Integer
-
-        For i = 0 To grdCountr.Columns.Count - 1
-            grdCountr.Columns.Item(i).Editable = False
-        Next
-
-        grdCountr.AutoResizeColumns()
-    End Sub
 
 End Class

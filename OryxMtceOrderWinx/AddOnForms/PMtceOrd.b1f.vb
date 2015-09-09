@@ -39,10 +39,8 @@ Friend Class PMtceOrd_b1f
         Me.ComboBox0 = CType(Me.GetItem("cboOrg").Specific, SAPbouiCOM.ComboBox)
         Me.ComboBox1 = CType(Me.GetItem("cboProb").Specific, SAPbouiCOM.ComboBox)
         Me.ComboBox2 = CType(Me.GetItem("cboTech").Specific, SAPbouiCOM.ComboBox)
-        Me.ButtonCombo0 = CType(Me.GetItem("cboCreate").Specific, SAPbouiCOM.ButtonCombo)
         Me.Grid0 = CType(Me.GetItem("grdTrans").Specific, SAPbouiCOM.Grid)
         Me.StaticText3 = CType(Me.GetItem("Item_11").Specific, SAPbouiCOM.StaticText)
-        Me.EditText4 = CType(Me.GetItem("txtPrc").Specific, SAPbouiCOM.EditText)
         Me.ComboBox4 = CType(Me.GetItem("cboStatus").Specific, SAPbouiCOM.ComboBox)
         Me.ComboBox5 = CType(Me.GetItem("cboType").Specific, SAPbouiCOM.ComboBox)
         Me.StaticText0 = CType(Me.GetItem("Item_3").Specific, SAPbouiCOM.StaticText)
@@ -54,12 +52,11 @@ Friend Class PMtceOrd_b1f
         Me.EditText3 = CType(Me.GetItem("txtMach").Specific, SAPbouiCOM.EditText)
         Me.LinkedButton0 = CType(Me.GetItem("Item_9").Specific, SAPbouiCOM.LinkedButton)
         Me.LinkedButton1 = CType(Me.GetItem("Item_10").Specific, SAPbouiCOM.LinkedButton)
-        Me.Grid1 = CType(Me.GetItem("grdMtnSch").Specific, SAPbouiCOM.Grid)
-        Me.Grid2 = CType(Me.GetItem("grdCountr").Specific, SAPbouiCOM.Grid)
         Me.StaticText4 = CType(Me.GetItem("Item_12").Specific, SAPbouiCOM.StaticText)
         Me.EditText5 = CType(Me.GetItem("txtCrTime").Specific, SAPbouiCOM.EditText)
         Me.StaticText5 = CType(Me.GetItem("Item_14").Specific, SAPbouiCOM.StaticText)
         Me.EditText6 = CType(Me.GetItem("txClTime").Specific, SAPbouiCOM.EditText)
+        Me.ComboBox3 = CType(Me.GetItem("cboCstCtr").Specific, SAPbouiCOM.ComboBox)
         Me.OnCustomInitialize()
 
     End Sub
@@ -109,7 +106,6 @@ Friend Class PMtceOrd_b1f
         m_BaseObject.OnLinkedPressedBefore(sboObject, pVal, BubbleEvent)
     End Sub
     Private WithEvents StaticText3 As SAPbouiCOM.StaticText
-    Private WithEvents EditText4 As SAPbouiCOM.EditText
     Private WithEvents txtBrk As SAPbouiCOM.EditText
 
     Private Sub Form_LoadAfter(pVal As SAPbouiCOM.SBOItemEventArg)
@@ -136,6 +132,7 @@ Friend Class PMtceOrd_b1f
     Private WithEvents EditText5 As SAPbouiCOM.EditText
     Private WithEvents StaticText5 As SAPbouiCOM.StaticText
     Private WithEvents EditText6 As SAPbouiCOM.EditText
+    Private WithEvents ComboBox3 As SAPbouiCOM.ComboBox
 
 
     'Private Sub cboMach_ComboSelectAfter(sboObject As Object, pVal As SAPbouiCOM.SBOItemEventArg) Handles cboMach.ComboSelectAfter

@@ -54,7 +54,31 @@ Public Class PMtceSched
 
     Public Overrides Sub OnChooseFromListAfter(ByVal sboObject As Object, ByVal pVal As SAPbouiCOM.SBOItemEventArg)
         MyBase.OnChooseFromListAfter(sboObject, pVal)
-        Dim Val As String = HandleChooseFromListEvent(pVal.FormUID, pVal, False)
+
+        Dim Val As String, valTable As SAPbouiCOM.DataTable = Nothing, lData As Boolean
+        Select Case pVal.ItemUID
+            Case "grdSched"
+                Select Case pVal.ColUID
+                    Case "Col_0"
+                        valTable = HandleChooseFromListEvent(pVal.FormUID, pVal, False, lData)
+                        If valTable Is Nothing Then Return
+                    Case Else
+                        Val = HandleChooseFromListEvent(pVal.FormUID, pVal, False)
+                        If String.IsNullOrEmpty(Val) Then Return
+                End Select
+            Case "grdcoutr"
+                Select Case pVal.ColUID
+                    Case "Col_0"
+                        valTable = HandleChooseFromListEvent(pVal.FormUID, pVal, False, lData)
+                        If valTable Is Nothing Then Return
+                    Case Else
+                        Val = HandleChooseFromListEvent(pVal.FormUID, pVal, False)
+                        If String.IsNullOrEmpty(Val) Then Return
+                End Select
+        End Select
+        
+
+        Val = HandleChooseFromListEvent(pVal.FormUID, pVal, False)
 
         If String.IsNullOrEmpty(Val) Then Return
 
@@ -72,15 +96,30 @@ Public Class PMtceSched
 
                         grdSched.FlushToDataSource()
 
-                        If getOffset(Val, "Code", m_DBDataSource3) Then
-                            Dim a = m_DBDataSource3.GetValue("U_actType", 0)
-                            m_DBDataSource4.SetValue("U_actType", pVal.Row - 1, m_DBDataSource3.GetValue("U_actType", 0))
-                            m_DBDataSource4.SetValue("U_actdesc", pVal.Row - 1, m_DBDataSource3.GetValue("U_actDesc", 0))
-                            m_DBDataSource4.SetValue("U_actfreq", pVal.Row - 1, m_DBDataSource3.GetValue("U_actFreq", 0))
-                            m_DBDataSource4.SetValue("U_freqValue", pVal.Row - 1, m_DBDataSource3.GetValue("U_freqUnit", 0))
+                        If lData Then
+                            Dim i As Integer, x As Integer = 0 'm_DataTable0.Rows.Count
+                            Dim McId As String = m_DBDataSource2.GetValue("Code", m_DBDataSource2.Offset)
+                            x = m_DBDataSource4.Size - 1
+                            For i = 0 To valTable.Rows.Count - 1
+                                m_DBDataSource4.InsertRecord(x)
+
+                                m_DBDataSource4.SetValue("U_macId", x, McId)
+                                m_DBDataSource4.SetValue("U_actType", x, valTable.GetValue("U_actType", i))
+                                m_DBDataSource4.SetValue("U_actdesc", x, valTable.GetValue("U_actDesc", i))
+                                m_DBDataSource4.SetValue("U_actfreq", x, valTable.GetValue("U_actFreq", i))
+                                m_DBDataSource4.SetValue("U_freqValue", x, valTable.GetValue("U_freqUnit", i))
+                                
+                                x += 1
+                            Next
+                            If m_Form.Mode = SAPbouiCOM.BoFormMode.fm_OK_MODE Then
+                                m_Form.Mode = SAPbouiCOM.BoFormMode.fm_UPDATE_MODE
+                            End If
                         End If
+                        'm_Form.DataSources.UserDataSources.Item("UD_0").ValueEx = m_DataTable0.Rows.Count
                        
                         grdSched.LoadFromDataSource()
+
+
 
                 End Select
             Case "grdcoutr"
@@ -92,11 +131,29 @@ Public Class PMtceSched
 
                         grdcoutr.FlushToDataSource()
 
-                        If getOffset(Val, "Code", m_DBDataSource3) Then
-                            Dim a = m_DBDataSource3.GetValue("U_ctype", 0)
-                            m_DBDataSource4.SetValue("U_ctype", pVal.Row - 1, m_DBDataSource3.GetValue("U_ctype", 0).Trim)
-                            m_DBDataSource4.SetValue("U_cUnit", pVal.Row - 1, m_DBDataSource3.GetValue("U_cUnit", 0).Trim)
-                            m_DBDataSource4.SetValue("U_cValue", pVal.Row - 1, m_DBDataSource3.GetValue("U_cValue", 0).Trim)
+                        'If getOffset(Val, "Code", m_DBDataSource3) Then
+                        '    Dim a = m_DBDataSource3.GetValue("U_ctype", 0)
+                        '    m_DBDataSource4.SetValue("U_ctype", pVal.Row - 1, m_DBDataSource3.GetValue("U_ctype", 0).Trim)
+                        '    m_DBDataSource4.SetValue("U_cUnit", pVal.Row - 1, m_DBDataSource3.GetValue("U_cUnit", 0).Trim)
+                        '    m_DBDataSource4.SetValue("U_cValue", pVal.Row - 1, m_DBDataSource3.GetValue("U_cValue", 0).Trim)
+                        'End If
+                        If lData Then
+                            Dim i As Integer, x As Integer = 0 'm_DataTable0.Rows.Count
+                            Dim McId As String = m_DBDataSource2.GetValue("Code", m_DBDataSource2.Offset)
+                            x = m_DBDataSource4.Size - 1
+                            For i = 0 To valTable.Rows.Count - 1
+                                m_DBDataSource4.InsertRecord(x)
+
+                                m_DBDataSource4.SetValue("U_macId", x, McId)
+                                m_DBDataSource4.SetValue("U_ctype", x, valTable.GetValue("U_ctype", i))
+                                m_DBDataSource4.SetValue("U_cUnit", x, valTable.GetValue("U_cUnit", i))
+                                m_DBDataSource4.SetValue("U_cValue", x, valTable.GetValue("U_cValue", i))
+
+                                x += 1
+                            Next
+                            If m_Form.Mode = SAPbouiCOM.BoFormMode.fm_OK_MODE Then
+                                m_Form.Mode = SAPbouiCOM.BoFormMode.fm_UPDATE_MODE
+                            End If
                         End If
 
                         grdcoutr.LoadFromDataSource()

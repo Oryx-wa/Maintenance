@@ -8,6 +8,8 @@ Public Class MachBrkDown
     Dim lblOprName As SAPbouiCOM.StaticText
     Dim txtPOdr As SAPbouiCOM.EditText
     Dim txtPrd As SAPbouiCOM.EditText
+    Dim txtOpr As SAPbouiCOM.EditText
+
 
     Sub New(ByVal pAddon As SboAddon, ByVal pForm As SAPbouiCOM.IForm)
         MyBase.New(pAddon, pForm)
@@ -54,9 +56,9 @@ Public Class MachBrkDown
         MyBase.OnFormInit()
 
         'txtPOdr = CType(Me.m_Form.Items.Item("txtPOdr").Specific, SAPbouiCOM.EditText)
-        'lblOprName = CType(Me.m_Form.Items.Item("OprName").Specific, SAPbouiCOM.StaticText)
-        'txtPrd = CType(Me.m_Form.Items.Item("txtPrd").Specific, SAPbouiCOM.EditText)
-        
+        lblOprName = CType(Me.m_Form.Items.Item("lblOprNam").Specific, SAPbouiCOM.StaticText)
+        txtOpr = CType(Me.m_Form.Items.Item("txtOpr").Specific, SAPbouiCOM.EditText)
+        cbodept = CType(Me.m_Form.Items.Item("cbodept").Specific, SAPbouiCOM.ComboBox)
         cboMach = CType(Me.m_Form.Items.Item("cboMach").Specific, SAPbouiCOM.ComboBox)
     End Sub
     Public Overrides Sub OnComponentInit()
@@ -76,6 +78,7 @@ Public Class MachBrkDown
     Private txtMachGrp As SAPbouiCOM.EditText
     Private txtOprName As SAPbouiCOM.EditText
     Private cboMach As SAPbouiCOM.ComboBox
+    Private cbodept As SAPbouiCOM.ComboBox
     Private colPrice As SAPbouiCOM.Column
     Private colQty As SAPbouiCOM.Column
     Private colAmt As SAPbouiCOM.Column
@@ -83,8 +86,8 @@ Public Class MachBrkDown
     Protected Overrides Sub OnFormLoad()
         MyBase.OnFormLoad()
 
+        fillCombo("Code", "Name", "OUDP", cbodept.ValidValues, "UserSign='1'")
         fillCombo("VisResCode", "ResName", "ORSC", cboMach.ValidValues, "ResType='M'")
-
     End Sub
 
     Protected Overrides Sub AddDataSource()

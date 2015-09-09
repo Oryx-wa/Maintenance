@@ -38,6 +38,15 @@ Imports OWA.SBO.OryxMtceOrderLib
         Me.EditText1 = CType(Me.GetItem("txtPrd").Specific, SAPbouiCOM.EditText)
         Me.LinkedButton0 = CType(Me.GetItem("Item_3").Specific, SAPbouiCOM.LinkedButton)
         Me.EditText3 = CType(Me.GetItem("txtDate").Specific, SAPbouiCOM.EditText)
+        Me.StaticText1 = CType(Me.GetItem("Item_4").Specific, SAPbouiCOM.StaticText)
+        Me.StaticText2 = CType(Me.GetItem("Item_5").Specific, SAPbouiCOM.StaticText)
+        Me.EditText5 = CType(Me.GetItem("Item_11").Specific, SAPbouiCOM.EditText)
+        Me.StaticText3 = CType(Me.GetItem("Item_7").Specific, SAPbouiCOM.StaticText)
+        Me.EditText6 = CType(Me.GetItem("Item_13").Specific, SAPbouiCOM.EditText)
+        Me.StaticText4 = CType(Me.GetItem("Item_14").Specific, SAPbouiCOM.StaticText)
+        Me.EditText7 = CType(Me.GetItem("Item_15").Specific, SAPbouiCOM.EditText)
+        Me.ComboBox0 = CType(Me.GetItem("cbodept").Specific, SAPbouiCOM.ComboBox)
+        Me.StaticText5 = CType(Me.GetItem("lblOprNam").Specific, SAPbouiCOM.StaticText)
         Me.OnCustomInitialize()
 
     End Sub
@@ -70,9 +79,21 @@ Imports OWA.SBO.OryxMtceOrderLib
     Private WithEvents EditText1 As SAPbouiCOM.EditText
     Private WithEvents LinkedButton0 As SAPbouiCOM.LinkedButton
     Private WithEvents EditText3 As SAPbouiCOM.EditText
+    Private WithEvents StaticText1 As SAPbouiCOM.StaticText
+    Private WithEvents StaticText2 As SAPbouiCOM.StaticText
+    Private WithEvents EditText5 As SAPbouiCOM.EditText
+    Private WithEvents StaticText3 As SAPbouiCOM.StaticText
+    Private WithEvents EditText6 As SAPbouiCOM.EditText
+    Private WithEvents StaticText4 As SAPbouiCOM.StaticText
+    Private WithEvents EditText7 As SAPbouiCOM.EditText
+    Private WithEvents ComboBox0 As SAPbouiCOM.ComboBox
 
 
 
 
     
+    Private Sub txtOpr_ChooseFromListAfter(ByVal sboObject As System.Object, ByVal pVal As SAPbouiCOM.SBOItemEventArg) Handles txtOpr.ChooseFromListAfter
+        m_BaseObject.OnChooseFromListAfter(sboObject, pVal)
+    End Sub
+    Private WithEvents StaticText5 As SAPbouiCOM.StaticText
 End Class

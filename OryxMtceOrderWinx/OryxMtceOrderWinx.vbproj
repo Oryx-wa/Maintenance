@@ -114,12 +114,6 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddOnForms\GoodsIssue.b1f.vb">
-      <DependentUpon>GoodsIssue.b1f</DependentUpon>
-    </Compile>
-    <Compile Include="AddOnForms\InventoryTransferRequest.b1f.vb">
-      <DependentUpon>InventoryTransferRequest.b1f</DependentUpon>
-    </Compile>
     <Compile Include="AddOnForms\MachBrkDown.b1f.vb">
       <DependentUpon>MachBrkDown.b1f</DependentUpon>
     </Compile>
@@ -131,12 +125,6 @@
     </Compile>
     <Compile Include="AddOnForms\prtypes.b1f.vb">
       <DependentUpon>prtypes.b1f</DependentUpon>
-    </Compile>
-    <Compile Include="AddOnForms\PurchaseOrder1.b1f.vb">
-      <DependentUpon>PurchaseOrder1.b1f</DependentUpon>
-    </Compile>
-    <Compile Include="AddOnForms\PurchaseRequest.b1f.vb">
-      <DependentUpon>PurchaseRequest.b1f</DependentUpon>
     </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -162,9 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -180,12 +168,6 @@
     <None Include="..\..\..\..\..\..\Local\Temp\1\B1\720+.+.srf__orig_srf">
       <Link>720+.+.srf__orig_srf</Link>
     </None>
-    <None Include="AddOnForms\GoodsIssue.b1f">
-      <FormCategory>SystemForm</FormCategory>
-    </None>
-    <None Include="AddOnForms\InventoryTransferRequest.b1f">
-      <FormCategory>SystemForm</FormCategory>
-    </None>
     <None Include="AddOnForms\MachBrkDown.b1f">
       <FormCategory>UserForm</FormCategory>
     </None>
@@ -197,12 +179,6 @@
     </None>
     <None Include="AddOnForms\prtypes.b1f">
       <FormCategory>UDOForm</FormCategory>
-    </None>
-    <None Include="AddOnForms\PurchaseOrder1.b1f">
-      <FormCategory>SystemForm</FormCategory>
-    </None>
-    <None Include="AddOnForms\PurchaseRequest.b1f">
-      <FormCategory>SystemForm</FormCategory>
     </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
@@ -239,7 +215,14 @@
       <Name>OryxMtceOrderLib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pm.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

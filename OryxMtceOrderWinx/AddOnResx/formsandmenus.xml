@@ -8,4 +8,7 @@
   <Forms Name="OWAMORCONFIG" MenuUID="m_mtceconfig" PermID="OWA_MOR002" PermCategory="OWA_MOR" UDO="Y"/>
   <Forms Name="OWAACTIVITY" MenuUID="m_acttypes" PermID="OWA_MOR002" PermCategory="OWA_MOR" UDO="Y"/>
   <Forms Name="OWACOUNTERS" MenuUID="m_counters" PermID="OWA_MOR002" PermCategory="OWA_MOR" UDO="Y"/>
+  <Forms Name="MACHGROUPS" MenuUID="m_groups" PermID="OWA_MOR002" PermCategory="OWA_MOR" UDO="Y"/>
+  <Forms Name="OWAMORORG" MenuUID="m_origtpes" PermID="OWA_MOR002" PermCategory="OWA_MOR" UDO="Y"/>
+  <Forms Name="OWAMORPRTYPEs" MenuUID="m_probtpes" PermID="OWA_MOR002" PermCategory="OWA_MOR" UDO="Y"/>
 </Oryx>

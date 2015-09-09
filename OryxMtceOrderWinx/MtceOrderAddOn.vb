@@ -19,6 +19,7 @@ Public Class MtceOrderAddOn
         PermissionPrefix = "OWA_MOR"
         MenuXMLFileName = "Menus.xml"
 
+        
 
         If IsNothing(m_SboApplication) Then
             pbo_RunApplication = False
@@ -30,11 +31,15 @@ Public Class MtceOrderAddOn
                 Exit Sub
             End If
 
+            Dim oMenuItem As SAPbouiCOM.MenuItem = m_SboApplication.Menus.Item(PermissionPrefix)
+            oMenuItem.Image = Windows.Forms.Application.StartupPath & "\pm.bmp"
+
         End If
         oApp.Run()
         pbo_RunApplication = True
         'Me.setFilters(oFilters)
 
+        
     End Sub
     <STAThread()>
     Public Sub Main()
